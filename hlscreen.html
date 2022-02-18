@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en" style = "width: 100vw; height: 100vh; background-color: white;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LynxClinical | Hearing Test</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAEk0lEQVR4XpWWWUidRxTH86wPGuKCJlp9UEREBAn40qBIEUXB5UFQwZaiFYIkL3GBuhS0LjU+pLVVwViuayB1bdEUG0vkJsVWxGpuxUrd931p3aL/zjneO37f5LOpPxjud8433zl3Zs4y1679DwAEiVEgRp8Y42Ls0Jienv6rq6vr19ra2rqRkZEQ9bsrI4wmiGGBhtXVVeTk5MDb25tHaGgobt++DWdnZ5SUlCwdHR3Fq3beibDrJYZZ64gwm81wdXVFVlYWJicnde8WFxcRGRmJhIQECKcvheo91a4hYuIdMVZ11qwEBweju7tbVUvevHmDlJQUxMTE4PT0dEWo3lft68C5syPFDjM8PAx/f39V/RbCEaKiolBUVEQi2TJ2ivNtNFwZUV5ejgcPHkiZzrKmpoYNt7S0YGeH4uictbU1eHh4YHR0lKfCaHuhObOzszN8XPUtzmwKAW2TiEh+XlhYwM2bN5GZmYnCwkIkJSXBxcUFbW1tcn5lZSXS09Ntoll1Fi9nClZ3dvHBZ5XY/edA6miFu7u7/JydnY28vDz5jrBYLLh16xYGBwdZ3trawvXr1/lcrcRpHepCf3Rmnh3OrW9q1ZLAwEDbduloaGhAbGyslH18fCBy1SaO2ZxRUuvo+93CDsmxEfb29tp/Ltnc3ISDg4OUw8PDMTAwoJmBIHJYoNUQTS9+YYcDlj/VV4yjoyNmZmZUNU5OTmBnZyflsLAwvHxJKSnJI4dUrnQ87PoR8eVf4/vfRtRXTF1dHdzc3NDZ2anTUzEICrrYsJCQEE4nDX3k8A+bRFv40Vf1+KS6ATmN3/FKL0PUTg4KLSaTCampqVJ2cnLC9vb2xQThixyyhpwlPqzBpy0dvJ31z82o6nmO/cNDXi3pTD+/kl8uLy/D3d1dykRiYiKampr4mVLH09NT916www7JUFxZFTvd2v8bqY8e48XrCRQ//QEdg8P4ouOZ/ELUSf4tKytDRkaG1B8fH+PGjRscOERjYyP/AYVt3ZZqIedZpqdI/8aE13OLrKM8pASnoKEiPjU1Jee3t7cjIiJCynFxcXjy5ImUrfCWvhU0BOVg9OeP2KGN+fl5bkm0CuVsuBK1trby8/r6Op/f/v6+bg6sQVOgagmqMnRutKU2KPeKi4s1s86ZnZ3lFR+K8yby8/O5hRlQYJj4BNXRD798zEHzLu7du4fc3Fx+pmCilKECbkCQYWm7ChMTE7y6lRVqf+B+SAXdAIu2luqKtwq1IOogKuPj4/D19eWIJHp7e+Hn5ye3VkF/9YDBlcIGrWBjY0PKtJq7d+9yxDY3N7Nub2+PA0qpnTb07cnq0AuXNOCAgACMjY1JuaKigs9Me07JycncHw0gm16qPwaXXDGio6PR09OjqiXV1dXcsg4OLvqnFbJ1R/WjgyZAWSmlAjVdI6gbUFSqtzic2/hvZzagXBOXlpa4bqrdYWhoiK8a/f39Oj3Ov/VS7b4TaC7C1B3o1kY3stLSUqSlpXHQPHt2UWetcxNUO1cG1qu+aLA/1dfXL9y/f/9IpMrh3Nwc7SOVxgKao35nxL/utbwvicXKWgAAAABJRU5ErkJggg==" alt="Ear Health Logo Favicon" />
+    <noscript>
+      <b style="line-height: 1.5; padding: 2%; font-size: 2rem; background-color: yellow;color: black;">Javascript is required to run the contents of this website. Please enable Javascript under your browser settings and reload the page. If the problem persists, try switching to another browser, such as Google Chrome, Safari, Microsoft Edge, or Mozilla Firefox, or use a different device.</b>
+    </noscript>
+</head>
+<body style="margin: 0px;" onload="return setup();" onresize="return sizer();">
+  <div id="home" class="mainLayout" style = "display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <div class="banner" style="height: 32vh; vertical-align: middle; display: table-cell;">
+      <p class="bannerText" style="position:absolute; right:40%; top: 0.5vh; margin:0px; text-align: left; font-size: 6vh; color:#000000; font-family: Verdana, Tahoma, Arial, sans-serif;">
+        <style>
+        </style>
+      </p>
+        <path stroke="#002d72" d="m2.0 80.8l10.9 0l8.0 -13.8l7.6 13.3l7.9 -46.4l5.3 67.9l10.6 -26.1l9.1 0" fill-rule="evenodd" />
+        <path d="m56.2 37.9c0.9 -2.4 2.1 -9.2 5.4 -14.2c3.2 -4.9 8.7 -12.1 14.0 -15.5c5.4 -3.4 12.2 -5.3 18.3 -5.1c6.0 0.2 12.8 2.7 17.9 6.3c5.1 3.6 9.4 8.6 12.7 15.1c3.3 6.5 6.2 15.9 7.4 23.6c1.1 7.8 0.8 14.8 -0.5 23.0c-1.4 8.1 -3.1 16.1 -7.6 25.9c-4.5 9.8 -13.0 24.1 -19.4 32.8c-6.5 8.8 -13.3 15.9 -19.4 19.7c-6.1 3.7 -12.5 4.0 -17.2 2.8c-4.7 -1.2 -8.7 -5.9 -11.3 -10.0c-2.6 -4.1 -3.6 -10.1 -4.1 -14.4c-0.5 -4.4 1.1 -9.7 1.3 -11.7" fill-rule="evenodd" />
+        <path d="m71.2 98.7c-0.1 -1.7 -1.7 -8.3 -0.7 -10.2c1.1 -1.9 4.9 -0.6 7.1 -1.2c2.2 -0.6 4.3 -0.9 6.0 -2.6c1.7 -1.7 3.8 -4.6 4.2 -7.5c0.4 -2.9 -0.1 -7.0 -1.7 -9.7c-1.6 -2.7 -6.3 -3.2 -7.9 -6.6c-1.5 -3.4 -2.2 -9.5 -1.3 -13.9c0.9 -4.5 3.5 -9.8 6.6 -12.9c3.1 -3.0 8.2 -5.4 11.9 -5.4c3.8 0.1 7.8 1.8 10.6 5.8c2.8 4.0 5.8 10.6 6.3 18.4c0.5 7.7 -0.5 18.3 -3.3 28.1c-2.8 9.8 -9.0 23.2 -13.4 30.5c-4.4 7.2 -9.1 10.2 -12.9 12.9c-3.8 2.6 -8.1 2.4 -9.7 2.9" fill-rule="evenodd" />
+      </svg>
+      <style>
+        @media screen and (max-width: 71vmax) {
+            .banner{ height: 45vw !important;}
+            .bannerText{ font-size: 8.5vw !important;}
+            .earLogoHome{ width: 35vw !important;}
+          };
+      </style>
+    </div>
+
+    <hr class="line1" style="border: none; height: 0.7vmin; background-color: black; margin: auto; width:76vh; ">
+    <p id="tester" class="name" style="margin: 2vh 2% 0 2%; font-size: 13vh;  color:#000000; text-shadow: 0px 0.4vmin 0.5vmin #999999; font-family: Verdana, Tahoma, Arial, sans-serif; line-height: 1.1;">
+    </p>
+    <style>
+      @media screen and (max-width: 84vmax) {
+        .name{ font-size: 15.5vw !important;}
+        .line1{ width: 90vw !important;}
+      };
+    </style>
+
+    <button class="btn1" style="flex: 1.5; width: 88vmin; height: 20vh;  background-color: #4477ee; font-weight: 600; font-size: 7vh; color: white; cursor: pointer; margin-top: 2vh; margin-bottom: 2vh; border: 0.75vmin solid; border-color: #002d72; border-radius: 4vh; overflow:hidden;"
+      onclick="return show('question1');">Test Your
+      <span class="arrow">Hearing
+        <svg id="arrow" version="1.1" style="height: 1.1em; vertical-align: text-top;" viewBox="0.0 0.0 76.8 76.8" fill="#eee" stroke="#000" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="butt" stroke-miterlimit="10" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+          <path d="m1.9 22.5l36.5 0l0 -20.8l36.5 36.7l-36.5 36.7l0 -20.8l-36.5 0z" fill-rule="evenodd" />
+        </svg>
+      </span>
+      <span class="short" style="display: none;">Hearing</span>
+    </button>
+    
+
+    <style>
+      @media screen and (max-width: 46vmax) {
+          .arrow{ display: none !important; }
+          .short{ display: block !important; }
+          .btn1{ font-size: 16vw!important; }
+          .btn2{ font-size: 15vw!important; }
+        };
+    </style>
+
+  </div>
+
+  <div id="pages" class="mainLayout" style = "display:none; width: 100vmin; height: 100vh; max-width: 100vw; max-height: 100vh; background-color: white; background-attachment: fixed; text-align: center; position:relative; top: 0px; font-family: Arial, sans-serif; text-align: left;">
+    <div id="topbar" style="display:none; width: 100%; height: 8vh; margin: 0px;">
+      <svg class="earLogo" version="1.1" style="height: 6vh; position:absolute; top:1vh; left:1.5vmin;" viewBox="0.0 0.0 31.7 36.5" fill="none" stroke="none" stroke-linecap="square" stroke-miterlimit="10" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+        <path stroke="#002d72" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="butt" d="m0.6 18.8l2.5 0l1.8 -3.2l1.8 3.1l1.8 -10.7l1.2 15.6l2.5 -6.0l2.1 0" fill-rule="evenodd" />
+        <path stroke="#000000" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="butt" d="m16.6 22.9c-0.0 -0.4 -0.5 -1.8 -0.1 -2.4c0.5 -0.5 2.2 0.0 2.9 -0.7c0.7 -0.7 1.3 -2.5 1.1 -3.5c-0.2 -1.1 -2.2 -1.5 -2.5 -2.9c-0.3 -1.3 0.0 -4.1 1.0 -5.1c0.9 -1.0 3.5 -1.9 4.7 -1.1c1.2 0.8 2.9 2.8 2.6 5.9c-0.2 3.1 -2.4 9.8 -3.9 12.6c-1.5 2.7 -4.2 3.2 -5.1 3.9" fill-rule="evenodd" />
+        <path stroke="#000000" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="butt" d="m13.5 9.1c0.2 -0.5 0.5 -2.1 1.2 -3.2c0.7 -1.1 2.0 -2.7 3.2 -3.5c1.2 -0.8 2.8 -1.2 4.2 -1.2c1.4 0.0 2.9 0.6 4.1 1.4c1.2 0.8 2.1 2.0 2.9 3.4c0.8 1.5 1.4 3.6 1.7 5.4c0.3 1.8 0.2 3.4 -0.1 5.2c-0.3 1.9 -0.7 3.7 -1.7 5.9c-1.0 2.2 -3.0 5.5 -4.4 7.5c-1.5 2.0 -3.0 3.6 -4.4 4.5c-1.4 0.9 -2.8 0.9 -3.9 0.6c-1.1 -0.3 -2.0 -1.3 -2.6 -2.3c-0.6 -0.9 -0.8 -2.3 -0.9 -3.3c-0.1 -1.0 0.2 -2.2 0.3 -2.7" fill-rule="evenodd" />
+      </svg>
+      <p class="earHealth" style="font-size: 4.5vh; color: #000000; font-weight:bold; Font-family: Verdana, Tahoma, Arial, sans-serif; position:relative; top: 1vh; width:80%; text-align: center; margin: auto;">
+      </p>
+
+      <button id="escape" class="escape" style="display:none; background-color: transparent; border: 1px solid; border-color: black; margin: 0px; padding:0px; cursor:pointer; width: 4vh; height: 4vh; position: absolute; top: 1vh; right: 1vmin;" onclick="return show('quit');">
+        <svg version="1.1" viewBox="0 0 20 20" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-miterlimit="10" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+          <line x1="3" x2="17" y1="3" y2="17"/>
+          <line x1="3" x2="17" y1="17" y2="3"/>
+        </svg>
+      </button>
+      <style>
+        .progressbg{height: 4vmin; position: relative; left:5%; width: 90%; border: 0.75vmin solid; border-color: black; border-radius: 1vh; background-color:#eeeeee;}
+        .progress{height: 100%; border: none; margin:0px; background-color:#002d72; color: white; line-height: 6vmin; font-size: 4.5vmin;}
+        @media screen and (max-width: 45vmax) {
+            .earHealth{font-size: 3vh !important; top: 0.25vh!important;}
+            .breakSpaceTop1{ display: none !important; }
+            .breakSpaceTop2{ display: block !important; }
+            @media screen and (max-width: 30vmax) {
+              .earHealth{font-size: 10vw !important;}
+              .earLogo{ height:20vw !important; }
+              .escape{ height:13.5vw !important; width:13.5vw !important; }
+            };
+        };
+      </style>
+    </div>
+    <div id="about" style="display: none;">
+      <p id="title" class="title" style="position: relative; margin:0px; padding: 0% 2% 0% 2%; line-height: 1; font-size: 4.5vh; color:#002d72; font-family: Verdana, Tahoma, Arial, sans-serif; font-weight: bold;">About this Web Application</p>
+      <hr class="bar" style="border: none; height: 0.7vmin; background-color: #4477ee; margin: 0px; margin-bottom: 3vh; width:25%; position: relative; top: 1vh; left: 2%; ">
+      <p id="text" class="text" style="position: relative; top: 0%; margin: 0px; padding: 0% 2% 0% 2%; font-size: 4.5vmin; color:#000000; line-height: 1.1;">This App was produced by Johns Hopkins University Biomedical Engineering majors <b>Ryan Chan</b> (‘23) and <b>David Day</b> (‘24) as directed by Hopkins Audiologists <a style="font-weight: bold;" href= "https://www.hopkinsmedicine.org/profiles/details/mary-jordan">Dr. Mary Donahue</a> and <a style="font-weight: bold;" href= "https://www.hopkinsmedicine.org/profiles/details/Amanda-Smith">Dr. Amanda Smith</a> to allow for better accessibility to hearing screening tests, especially during the COVID-19 pandemic. This test can be accessed on any device that connects to the internet, and is most accurate with Apple Airpods®️ ...
+        <a style="font-weight: bold; color: #002d72;" href= "https://translate.google.com/?sl=en&tl=es&text=This%20link%20is%20just%20a%20filler%3B%20it%20will%20be%20replaced%20in%20the%20actual%20web%20application.&op=translate&hl=en">Read more</a>
+      </p>
+    </div>
+    <div id="qProgBar-0" class="progressbg" style="display: none;">
+      <div id="qProgBar-1" class="progress" style="width: 8.3%;">
+      </div>
+    </div>
+
+    <div id="question1" style="display:none; color:#000000;">
+      <p id="q1" class="qtext"><b>1)</b> Why are you interested in testing your hearing? Select <i>all</i> that apply:</p>
+      <button id="q1-0" class="qtext" onclick="response(0)">☐ Family history of hearing loss</button>
+      <button id="q1-1" class="qtext" onclick="response(1)">☐ My doctor recommended it</button>
+      <button id="q1-2" class="qtext" onclick="response(2)">☐ I have known hearing loss</button>
+      <button id="q1-3" class="qtext" onclick="response(3)">☐ Curious about my hearing</button>
+    </div>
+    <style>
+      .qtext{width:96%; font-size: 6vmin; line-height: 1.5; margin: 2%; margin-bottom: 0px; background-color: white; text-align: left; border-color: #999;}
+    </style>
+
+    <div id="question2" style="display:none; color:#000000;">
+      <p id="q2" class="qtext"><b>2)</b> What is your biologic sex?</p>
+      <button id="q2-0" class="qtext" onclick="response(4)">⭘ Male</button>
+      <button id="q2-1" class="qtext" onclick="response(5)">⭘ Female</button>
+      <button id="q2-2" class="qtext" onclick="response(6)">⭘ Prefer not to say</button>
+    </div>
+    <div id="question3" style="display:none; color:#000000;">
+      <p id="q3" class="qtext"><b>3)</b> What is your age?</p>
+      <button id="q3-0" class="qtext" onclick="response(7)">⭘ 13 - 26</button>
+      <button id="q3-1" class="qtext" onclick="response(8)">⭘ 27 - 40</button>
+      <button id="q3-2" class="qtext" onclick="response(9)">⭘ 41 - 54</button>
+      <button id="q3-3" class="qtext" onclick="response(10)">⭘ 55 or over</button>
+    </div>
+
+    <div id="question4" style="display:none; color:#000000;">
+      <p id="q4" class="qtext"><b>4)</b> What device are you using?</p>
+      <button id="q4-0" class="qtext" onclick="response(12)">⭘ Computer</button>
+      <button id="q4-1" class="qtext" onclick="response(13)">⭘ iPhone® / iPad®</button>
+      <button id="q4-2" class="qtext" onclick="response(14)">⭘ Android™ Device</button>
+      <button id="q4-3" class="qtext" onclick="response(15)">⭘ Other Mobile Device</button>
+      <p style="font-size: 2vmin; color: #999; margin: 2%; margin-bottom: 0px;">Android is a trademark of Google LLC. iPhone and iPad are trademarks of Apple Inc. Ear Health is unaffilated with Google or Apple.</p>
+    </div>
+
+    <div id="question5" style="display:none; color:#000000;">
+      <div id="q5_0div" style="display: none;">
+        <p id="q5_0" class="qtext"><b>5)</b> Select your copmputer type:</p>
+        <button id="q5_0-0" class="qtext" onclick="response(20)">⭘ Macintosh/ iMac/ MacBook</button>
+        <button id="q5_0-1" class="qtext" onclick="response(21)">⭘ Dell/ HP/ Microsoft</button>
+        <button id="q5_0-2" class="qtext" onclick="response(22)">⭘ ASUS/ Lenovo/ Google</button>
+        <button id="q5_0-3" class="qtext" onclick="response(23)">⭘ Other PC</button>
+      </div>
+      <div id="q5_1div" style="display: none;">
+        <p id="q5_1" class="qtext"><b>5)</b> Select your Apple device:</p>
+        <button id="q5_1-0" class="qtext" onclick="response(30)">⭘ iPhone 4/ 5/ 5s/ 6/ 6s/ SE</button>
+        <button id="q5_1-1" class="qtext" onclick="response(31)">⭘ iPhone 7/ 8/ X</button>
+        <button id="q5_1-2" class="qtext" onclick="response(32)">⭘ iPhone 11/ 12</button>
+        <button id="q5_1-3" class="qtext" onclick="response(33)">⭘ iPad (Mini / Air)</button>
+        <button id="q5_1-4" class="qtext" onclick="response(34)">⭘ iPad Pro</button>
+      </div>
+      <div id="q5_2div" style="display: none;">
+        <p id="q5_2" class="qtext"><b>5)</b> Select your Android device:</p>
+        <button id="q5_2-0" class="qtext" onclick="response(40)">⭘ Google Pixel</button>
+        <button id="q5_2-1" class="qtext" onclick="response(41)">⭘ Microsoft Surface Duo</button>
+        <button id="q5_2-2" class="qtext" onclick="response(42)">⭘ Samsung Galazy</button>
+        <button id="q5_2-3" class="qtext" onclick="response(43)">⭘ Motorola / Nokia</button>
+        <button id="q5_2-4" class="qtext" onclick="response(44)">⭘ Other</button>
+      </div>
+      <div id="q5_3div" style="display: none;">
+        <p id="q5_3" class="qtext"><b>5)</b> Warning: This app is not calibrated for the mobile device you indicated. We suggest using an Apple product or PC for greater accuracy.</p>
+      </div>
+    </div>
+
+    <div id="question6" style="display:none; color:#000000;">
+      <p id="q6" class="qtext"><b>5)</b> What hearing device will you use for this test?</p>
+      <button id="q6-0" class="qtext" onclick="response(16)">⭘ <svg version="1.1" style="width: 1em; vertical-align:text-top;" viewBox="0.0 0.0 100.0 100.0" fill="none" stroke="none" stroke-linecap="square" stroke-miterlimit="10" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+        <path stroke="#000000" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="butt" d="m12.8 97.0l-7.2 0l0 0c-0.9 0 -1.8 -0.4 -2.4 -1.0c-0.6 -0.6 -1.0 -1.5 -1.0 -2.4l0 -3.4c0 -6.9E-5 5.3E-5 -1.2E-4 1.2E-4 -1.2E-4l14.1 1.2E-4l0 0c6.5E-5 0 1.2E-4 5.3E-5 1.2E-4 1.1E-4l-1.2E-4 3.4l0 0c0 1.9 -1.5 3.4 -3.4 3.4z" fill-rule="evenodd"/>
+        <path fill="#000000" d="m65.1 21.1l0 0c0 -1.3 1.0 -2.3 2.3 -2.3l0 0c0.6 0 1.2 0.2 1.6 0.7c0.4 0.4 0.7 1.0 0.7 1.6l0 0c0 1.3 -1.0 2.3 -2.3 2.3l0 0c-1.3 0 -2.3 -1.0 -2.3 -2.3z" fill-rule="evenodd"/>
+        <path stroke="#000000" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="butt" d="m2.1 34.1l0 55.8" fill-rule="evenodd"/>
+        <path stroke="#000000" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="butt" d="m16.2 36.5l0 53.6" fill-rule="evenodd"/>
+        <path stroke="#000000" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="butt" d="m12.6 32.1c1.0 1.0 3.6 4.9 6.2 6.3c2.6 1.4 6.8 2.8 9.7 2.1c2.9 -0.7 5.9 -2.6 7.6 -6.4c1.6 -3.8 2.9 -11.4 2.2 -16.2c-0.7 -4.8 -3.4 -10.4 -6.4 -12.7c-3.0 -2.3 -7.7 -2.2 -11.4 -0.9c-3.7 1.3 -7.9 5.2 -10.7 8.7c-2.9 3.5 -5.1 9.0 -6.4 12.6c-1.3 3.6 -1.1 7.5 -1.3 9.0" fill-rule="evenodd"/>
+        <path stroke="#000000" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="butt" d="m97.9 34.1l0 55.8" fill-rule="evenodd"/>
+        <path stroke="#000000" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="butt" d="m83.8 36.5l0 53.6" fill-rule="evenodd"/>
+        <path stroke="#000000" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="butt" d="m87.3 33.4c-0.8 0.7 -2.6 3.1 -4.9 4.2c-2.3 1.0 -6.0 2.4 -9.1 2.1c-3.2 -0.3 -7.3 -2.3 -9.9 -4.0c-2.6 -1.7 -4.8 -5.3 -5.7 -6.4" fill-rule="evenodd"/>
+        <path stroke="#000000" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="butt" d="m57.6 12.8c1.4 -1.2 5.0 -5.5 8.4 -7.1c3.4 -1.6 8.4 -2.9 12.0 -2.6c3.6 0.3 7.0 2.3 9.6 4.5c2.6 2.2 4.3 5.2 5.9 8.6c1.6 3.4 2.8 8.8 3.5 11.9c0.7 3.1 0.7 5.7 0.8 6.8" fill-rule="evenodd"/>
+        <path stroke="#000000" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="butt" d="m94.5 97.0l-7.2 0l0 0c-0.9 0 -1.8 -0.4 -2.4 -1.0c-0.6 -0.6 -1.0 -1.5 -1.0 -2.4l0 -3.4c0 -6.9E-5 5.3E-5 -1.2E-4 1.2E-4 -1.2E-4l14.1 1.2E-4l0 0c6.9E-5 0 1.2E-4 5.3E-5 1.2E-4 1.1E-4l-1.2E-4 3.4l0 0c0 1.9 -1.5 3.4 -3.4 3.4z" fill-rule="evenodd"/>
+        <path stroke="#000000" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="butt" d="m58.0 12.0l0 18.1" fill-rule="evenodd"/>
+        <path fill="#000000" d="m82.4 11.0c0.6 0.6 2.5 2.0 3.4 3.4c1.0 1.4 1.9 4.2 2.3 5.0" fill-rule="evenodd"/><path stroke="#000000" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="butt" d="m82.4 11.0c0.6 0.6 2.5 2.0 3.4 3.4c1.0 1.4 1.9 4.2 2.3 5.0" fill-rule="evenodd"/>
+        <path stroke="#000000" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="butt" d="m14.2 18.8l0 4.6" fill-rule="evenodd"/>
+        <path stroke="#000000" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="butt" d="m33.7 18.8l0 4.6" fill-rule="evenodd"/>
+        <path fill="#000000" fill-opacity="0.0" d="m24.9 13.4l0 14.6" fill-rule="evenodd"/>
+        <path stroke="#000000" stroke-width="8.0" stroke-linejoin="round" stroke-linecap="butt" d="m24.9 13.4l0 14.6" fill-rule="evenodd"/>
+      </svg> Apple Earbuds / Airpods®️</button>
+      <button id="q6-1" class="qtext" onclick="response(17)">⭘ <svg version="1.1" style="width: 1em; vertical-align:text-top;" viewBox="0.0 0.0 100.0 100.0" fill="none" stroke="none" stroke-linecap="square" stroke-miterlimit="10" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#000000" d="m2.6 85.5l0 -23.4l0 0c0 -2.0 0.8 -3.9 2.2 -5.4c1.4 -1.4 3.3 -2.2 5.4 -2.2l7.6 0c1.8E-4 0 3.2E-4 1.4E-4 3.2E-4 3.2E-4l-3.2E-4 38.6l0 0c0 1.8E-4 -1.4E-4 3.2E-4 -3.2E-4 3.2E-4l-7.6 -3.2E-4l0 0c-4.2 0 -7.6 -3.4 -7.6 -7.6z" fill-rule="evenodd"/>
+        <path fill="#000000" d="m11.5 43.8l0 0c0.0 -20.4 17.3 -36.9 38.6 -36.9c21.3 -0.0 38.6 16.5 38.6 36.9l-6.3 0.0c-0.0 -16.9 -14.5 -30.5 -32.3 -30.5c-17.8 0.0 -32.2 13.7 -32.2 30.5z" fill-rule="evenodd"/>
+        <path fill="#000000" d="m21.0 57.2l0 0c0 -1.5 1.2 -2.6 2.6 -2.6l0 0l0 0c0.7 0 1.4 0.3 1.9 0.8c0.5 0.5 0.8 1.2 0.8 1.9l0 33.3c0 1.5 -1.2 2.6 -2.6 2.6l0 0l0 0c-1.5 0 -2.6 -1.2 -2.6 -2.6z" fill-rule="evenodd"/>
+        <path fill="#000000" d="m97.4 85.5l0 -23.4l0 0c0 -2.0 -0.8 -3.9 -2.2 -5.4c-1.4 -1.4 -3.3 -2.2 -5.4 -2.2l-7.6 0c-1.8E-4 0 -3.2E-4 1.4E-4 -3.2E-4 3.2E-4l3.2E-4 38.6l0 0c0 1.8E-4 1.4E-4 3.2E-4 3.2E-4 3.2E-4l7.6 -3.2E-4l0 0c4.2 0 7.6 -3.4 7.6 -7.6z" fill-rule="evenodd"/>
+        <path fill="#000000" d="m79.0 57.2l0 0c0 -1.5 -1.2 -2.6 -2.6 -2.6l0 0l0 0c-0.7 0 -1.4 0.3 -1.9 0.8c-0.5 0.5 -0.8 1.2 -0.8 1.9l0 33.3c0 1.5 1.2 2.6 2.6 2.6l0 0l0 0c1.5 0 2.6 -1.2 2.6 -2.6z" fill-rule="evenodd"/>
+        <path fill="#000000" d="m82.3 41.9l6.4 0l0 12.6l-6.4 0z" fill-rule="evenodd"/>
+        <path fill="#000000" d="m11.3 43.2l6.4 0l0 12.6l-6.4 0z" fill-rule="evenodd"/>
+      </svg> Headphones (covers ears)</button>
+      <button id="q6-2" class="qtext" onclick="response(18)">⭘ <svg version="1.1" style="width: 1em; vertical-align:text-top;" viewBox="0.0 0.0 100.0 100.0" fill="#000" stroke="none" stroke-linecap="round" stroke-miterlimit="10" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+        <path fill="none" stroke="#000" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="butt" d="m96.0 92.2c-2.9 0.7 -9.5 6.0 -17.4 4.4c-7.9 -1.7 -26.0 -9.9 -30.1 -14.4c-4.1 -4.5 1.3 -9.0 5.6 -12.7c4.2 -3.7 14.7 -5.8 19.9 -9.6c5.2 -3.8 9.2 -11.0 11.1 -13.3"/>
+        <path fill="none" stroke="#000" stroke-width="1.5" stroke-linejoin="round" d="m15.8 44.6c1.6 2.1 5.7 8.9 9.4 12.5c3.7 3.5 9.1 4.9 12.7 8.7c3.7 3.9 7.8 12.1 9.3 14.5"/>
+        <path d="m77.2 2.5l10.3 0l0 0c5.7 0 10.3 4.8 10.3 10.8c0 5.9 -4.6 10.8 -10.3 10.8l-10.3 0z"/>
+        <path d="m57.5 18.4l0 -10.3l0 0c0 -1.3 0.5 -2.5 1.4 -3.5c0.9 -0.9 2.2 -1.4 3.5 -1.4l8.1 0c9.2E-5 0 1.7E-4 7.5E-5 1.7E-4 1.7E-4l-1.7E-4 20.1l0 0c0 9.2E-5 -7.6E-5 1.7E-4 -1.7E-4 1.7E-4l-8.1 -1.7E-4l0 0c-2.7 0 -4.9 -2.2 -4.9 -4.9z"/>
+        <path d="m73.1 5.3l4.2 0l0 15.9l-4.2 0z"/>
+        <path d="m85.9 43.5l-2.8 0l0 0c-0.6 0 -1.1 -0.2 -1.5 -0.6c-0.4 -0.4 -0.6 -0.9 -0.6 -1.5l0 -17.3c0 -3.2E-5 2.3E-5 -5.7E-5 6.1E-5 -5.7E-5l7.0 5.7E-5l0 0c3.1E-5 0 5.3E-5 2.7E-5 5.3E-5 5.9E-5l-5.3E-5 17.3l0 0c0 1.2 -0.9 2.1 -2.1 2.1z"/>
+        <path d="m22.4 1.5l-10.3 0l0 0c-5.7 0 -10.3 4.8 -10.3 10.8c0 5.9 4.6 10.8 10.3 10.8l10.3 0z"/>
+        <path d="m42.2 17.4l0 -10.3l0 0c0 -1.3 -0.5 -2.5 -1.4 -3.5c-0.9 -0.9 -2.2 -1.4 -3.5 -1.4l-8.1 0c-9.3E-5 0 -1.7E-4 7.5E-5 -1.7E-4 1.7E-4l1.7E-4 20.1l0 0c0 9.3E-5 7.4E-5 1.7E-4 1.7E-4 1.7E-4l8.1 -1.7E-4l0 0c2.7 0 4.9 -2.2 4.9 -4.9z"/>
+        <path d="m26.6 4.3l-4.2 0l0 15.9l4.2 0z"/>
+        <path d="m13.8 42.4l2.8 0l0 0c0.6 0 1.1 -0.2 1.5 -0.6c0.4 -0.4 0.6 -0.9 0.6 -1.5l0 -17.3c0 -3.2E-5 -2.7E-5 -5.9E-5 -5.9E-5 -5.9E-5l-7.0 5.9E-5l0 0c-3.2E-5 0 -5.8E-5 2.7E-5 -5.8E-5 5.7E-5l5.8E-5 17.3l0 0c0 1.2 0.9 2.1 2.1 2.1z"/>
+      </svg> Other Earbuds/Speakers</button>
+			
+      <button id="q6-3" class="qtext" onclick="response(19)">⭘ I have none of the above</button>
+    </div>
+
+    <div id="question7" style="display:none; color:#000000;">
+      <div id="q7_0div">
+        <p id="q7_0" class="qtext"><b>7)</b> Select your Apple hearing device:</p>
+        <button id="q7_0-0" class="qtext" onclick="response(50)">⭘ Airpods®️</button>
+        <button id="q7_0-1" class="qtext" onclick="response(51)">⭘ Airpod Pro®️</button>
+        <button id="q7_0-2" class="qtext" onclick="response(52)">⭘ AirPods Max™</button>
+        <button id="q7_0-3" class="qtext" onclick="response(53)">⭘ Apple Earbuds</button>
+      </div>
+      <div id="q7_1div">
+        <p id="q7_1" class="qtext"><b>7)</b> Select your headphone type:</p>
+        <button id="q7_1-0" class="qtext" onclick="response(60)">⭘ Generic Headphones</button>
+        <button id="q7_1-1" class="qtext" onclick="response(61)">⭘ Noise reducing</button>
+        <button id="q7_1-2" class="qtext" onclick="response(62)">⭘ Sound Booth Standard Audiology Headphones</button>
+      </div>
+      <div id="q7_2div" style="display: none;">
+        <p id="q7_2" class="qtext"><b>7)</b> Warning: This app is not calibrated for the listening device you indicated. We suggest using an Apple product or headphones for greater accuracy.</p>
+      </div>
+    </div>
+
+    <div id="question8" style="display:none; color:#000000;">
+      <p id="q8" class="qtext"><b>6)</b> By taking this free hearing test, you are consenting to the use of your results for research purposes only. Your name, contact info, and IP address will NOT be collected, and your results will not be shared with any third parties or advertisers.</p>
+      <button id="q8-0" class="qtext" onclick="response(68)">⭘ Yes, allow LynxClinical to access my results</button>
+      <button id="q8-1" class="qtext" onclick="response(69)">⭘ No, I do not consent</button>
+    </div>
+
+    <div id="sorry" style="display:none; color:#000000;">
+      <p id="sorryText" class="qtext">Sorry, you may not take the test at this time.</p>
+      <div id="noHearDevice" class="qtext">
+        <p>You <b>must</b> use headphones, earbuds, or Apple Airpods®️ for this test.</p>
+      </div>
+      <div id="noConsent" class="qtext">
+        <p>We respect your right to privacy, so we prevented your data from being collected. You may take this free hearing test if you allow LynxClinical access to your results. We don't collect any personally identifying info, and never share your results with advertisers or other companies.</p>
+      </div>
+      <button class="next" style ="position: absolute; bottom: 2%; right: 2%; width: 25vh; height: 10%; margin:0px; font-size: 4.5vh; color:black; background-color:#ffcccc; font-weight: bold; cursor: pointer; border: 0.75vmin solid; border-color: red; border-radius: 3vh;" onclick="return quit();">Quit</button>
+    </div>
+
+    <div id="allowMic" style="display:none; color:#000000;">
+      <p id="allowMic-0" class="qtext">To test for background noise, please click the button below and <b>allow access</b> to your microphone.</p>
+      <button style = "position: absolute; bottom: 5vh; left:10vmin; height: 55vh; width:80vmin; cursor: pointer; padding: 0px; background-color: transparent; border: none;" onclick="return getMic();">
+        <svg version="1.1" style="width:100%; height: 100%;" viewBox="0.0 0.0 300.0 300.0" fill="#fff" fill-rule="evenodd" stroke="none" stroke-linecap="butt" stroke-miterlimit="10" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+          <circle fill="#ffcccc" cx="150" cy="150" r="150"/>
+          <circle fill="#4477ee" stroke="#002d72" stroke-width="3.0" stroke-linejoin="round" stroke="#000" cx="150" cy="150" r="120"/>
+          <path d="m126.4 89.9l0 0c0 -13.0 10.6 -23.6 23.6 -23.6l0 0l0 0c6.3 0 12.3 2.5 16.7 6.9c4.4 4.4 6.9 10.4 6.9 16.7l0 57.4c0 13.0 -10.6 23.6 -23.6 23.6l0 0l0 0c-13.0 0 -23.6 -10.6 -23.6 -23.6z"/>
+          <path d="m193.8 147.6l0 0c0 15.7 -8.4 30.1 -21.9 38.0c-13.6 7.8 -30.3 7.8 -43.9 -0.0c-13.6 -7.9 -21.9 -22.3 -21.9 -38.0l11.5 0.0c-0.0 11.6 6.1 22.2 16.1 28.0c10.0 5.8 22.3 5.8 32.3 0.0c10.0 -5.8 16.2 -16.4 16.2 -28.0z"/>
+          <path d="m144.2 190.5l11.5 0l0 21.8l-11.5 0z"/>
+          <path d="m119.3 217.7l0 0c0 -3.2 2.6 -5.8 5.8 -5.8l49.8 0c1.5 0 3.0 0.6 4.1 1.7c1.1 1.1 1.7 2.6 1.7 4.1l0 0l0 0c0 3.2 -2.6 5.8 -5.8 5.8l-49.8 0c-3.2 0 -5.8 -2.6 -5.8 -5.8z"/>
+          <path d="m106.2 130.7l0 0c0 -3.2 2.6 -5.8 5.8 -5.8l0 0l0 0c1.5 0 3.0 0.6 4.1 1.7c1.1 1.1 1.7 2.5 1.7 4.1l0 17.4c0 3.2 -2.6 5.8 -5.8 5.8l0 0l0 0c-3.2 0 -5.8 -2.6 -5.8 -5.8z"/>
+          <path fill="#4477ee" d="m125.1 125.0l49.8 0l0 4.0l-49.8 0z"/>
+          <path d="m182.3 130.7l0 0c0 -3.2 2.6 -5.8 5.8 -5.8l0 0l0 0c1.5 0 3.0 0.6 4.1 1.7c1.1 1.1 1.7 2.5 1.7 4.1l0 17.4c0 3.2 -2.6 5.8 -5.8 5.8l0 0l0 0c-3.2 0 -5.8 -2.6 -5.8 -5.8z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="bgNoise" style="display:none; color:#000000; text-align: center;">
+      <p id="bgNoise-0" class="qtext">Testing for background noise<br>(5 seconds remaining...)</p>
+      <button style = "position: absolute; bottom: 5vh; left:10vmin; height: 55vh; width:80vmin; cursor: default; padding: 0px; background-color: transparent; border: none;">
+        <svg version="1.1" style="width:100%; height: 100%;" viewBox="0.0 0.0 300.0 300.0" fill="#fff" fill-rule="evenodd" stroke="none" stroke-linecap="butt" stroke-miterlimit="10" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+          <circle id="micSVG" fill="#ffcccc" cx="150" cy="150" r="150"/>
+          <circle id="micBg1" fill="#4477ee" stroke="#000" stroke-width="1.0" stroke-linejoin="round" stroke="#000" cx="150" cy="150" r="120"/>
+          <path d="m126.4 89.9l0 0c0 -13.0 10.6 -23.6 23.6 -23.6l0 0l0 0c6.3 0 12.3 2.5 16.7 6.9c4.4 4.4 6.9 10.4 6.9 16.7l0 57.4c0 13.0 -10.6 23.6 -23.6 23.6l0 0l0 0c-13.0 0 -23.6 -10.6 -23.6 -23.6z"/>
+          <path d="m193.8 147.6l0 0c0 15.7 -8.4 30.1 -21.9 38.0c-13.6 7.8 -30.3 7.8 -43.9 -0.0c-13.6 -7.9 -21.9 -22.3 -21.9 -38.0l11.5 0.0c-0.0 11.6 6.1 22.2 16.1 28.0c10.0 5.8 22.3 5.8 32.3 0.0c10.0 -5.8 16.2 -16.4 16.2 -28.0z"/>
+          <path d="m144.2 190.5l11.5 0l0 21.8l-11.5 0z"/>
+          <path d="m119.3 217.7l0 0c0 -3.2 2.6 -5.8 5.8 -5.8l49.8 0c1.5 0 3.0 0.6 4.1 1.7c1.1 1.1 1.7 2.6 1.7 4.1l0 0l0 0c0 3.2 -2.6 5.8 -5.8 5.8l-49.8 0c-3.2 0 -5.8 -2.6 -5.8 -5.8z"/>
+          <path d="m106.2 130.7l0 0c0 -3.2 2.6 -5.8 5.8 -5.8l0 0l0 0c1.5 0 3.0 0.6 4.1 1.7c1.1 1.1 1.7 2.5 1.7 4.1l0 17.4c0 3.2 -2.6 5.8 -5.8 5.8l0 0l0 0c-3.2 0 -5.8 -2.6 -5.8 -5.8z"/>
+          <path id="micBg2" fill="#4477ee" d="m125.1 125.0l49.8 0l0 4.0l-49.8 0z"/>
+          <path d="m182.3 130.7l0 0c0 -3.2 2.6 -5.8 5.8 -5.8l0 0l0 0c1.5 0 3.0 0.6 4.1 1.7c1.1 1.1 1.7 2.5 1.7 4.1l0 17.4c0 3.2 -2.6 5.8 -5.8 5.8l0 0l0 0c-3.2 0 -5.8 -2.6 -5.8 -5.8z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="tooNoisy" style="display:none; color:#000000; text-align: center;">
+      <p id="tooNoisy-0" class="qtext">There's too much noise in your background.</p>
+      <p id="tooNoisy-1" class="qtext">Please <b>move to a quieter location</b> and click "ok" when you're ready.</p>
+      <button style ="bottom: 2%; width: 80%; max-width: 40vh; height: 15vh; margin:0px; margin-top: 5%; font-size: 7vh; color:white; background-color:#4477ee; font-weight: bold; cursor: pointer; border: 0.75vmin solid; border-color: #002d72; border-radius: 3vh;" onclick="return getMic();">Ok</button>
+    </div>
+
+    <div id="noMic" style="display:none; color:#000000; text-align: center;">
+      <div id="noMic1">
+        <p id="noMic-0" class="qtext">Your microphone could not be accessed.</p>
+        <p id="noMic-1" class="qtext"><b>Warning:</b> your results may be inaccurate, because we cannot determine the level of your background noise.</p>
+      </div>
+      <div id="noMic2">
+        <p id="noMic-2" class="qtext">It seems you are having trouble finding a quiet area, or your microphone is too sensitive.</p>
+        <p id="noMic-3" class="qtext"><b>Warning:</b> your results may be inaccurate if you continue with the test.</p>
+      </div>
+        <button style ="bottom: 2%; width: 80%; max-width: 40vh; height: 15vh; margin:0px; margin-top: 5%; font-size: 7vh; color:white; background-color:#4477ee; font-weight: bold; cursor: pointer; border: 0.75vmin solid; border-color: #002d72; border-radius: 3vh;" onclick="return show('+1');">Ok</button>
+    </div>
+
+    <div id="begin" style="display:none; color:#000000; text-align: center;">
+      <p id="begin-0" class="qtext">Put on your listening device, and set your <b>device volume to 100%.</b></p>
+      <p id="begin-1" class="qtext">For the best results, please remain in a noise-free location throughout the test.</p>
+    </div>
+
+    <div id="practiceSctBar" style="display:none; margin: 0px; width:100%; height: 9vh; background-color: #ddeeff; text-align: center;">
+      <div style="margin: 0px; width:100%; height: 9vh; background-color: #ddeeff; display: table; overflow: hidden; text-align: center;">
+        <p id="section" style="margin: 0px; font-size: 4vh; font-weight: bold; display: table-cell; vertical-align: middle;">Calibration / Practice Section</p>
+      </div>
+    </div>
+    <div id="sctBar" style="display:none;">
+      <i id="beepProg" style="margin:0px 0px 0px 8%; padding:0px; font-size: 1.5rem;">Left ear progress:</i>
+      <div class="progressbg" style="margin-top: 1%;">
+        <div id="sctProgBar" class="progress" style="width: 10%;">
+        </div>
+      </div>
+    </div>
+    <div id="beeps" style="display:none; color:#000000; text-align: center;">
+      <p id="beeps-0" class="qtext">Press the button below <b>as soon as</b> you hear a tone, even if it is very soft.</p>
+      <button style ="bottom: 2%; width: 80vmin; height: 36vh; margin:0px; margin-top: 5%; font-size: 14vmin; color:white; background-color:#4477ee; font-weight: bold; cursor: pointer; border: 0.75vmin solid; border-color: #002d72; border-radius: 3vh;" onclick="return heard();">I hear the tone</button>
+    </div>
+
+    <div id="question9" style="display:none; color:#000000;">
+      <p id="q9" class="qtext">In which ear(s) do you hear this tone?</p>
+      <button id="q9-0" class="qtext" onclick="response(70)">⭘ Both ears</button>
+      <button id="q9-1" class="qtext" onclick="response(71)">⭘ Left ear only</button>
+      <button id="q9-2" class="qtext" onclick="response(72)">⭘ Right ear only</button>
+      <button id="q9-3" class="qtext" onclick="response(73)">⭘ I don't hear the tone</button>
+    </div>
+
+    <div id="question10" style="display:none; color:#000000;">
+      <p id="q10" class="qtext">What ear do you perceive as your better ear? (This will determine which ear is tested first.)</p>
+      <button id="q10-0" class="qtext" onclick="response(80)">⭘ Right ear</button>
+      <button id="q10-1" class="qtext" onclick="response(81)">⭘ Left ear</button>
+      <button id="q10-2" class="qtext" onclick="response(82)">⭘ No preference</button>
+    </div>
+
+    <div id="redo" style="display:none; color:#000000; text-align: center;">
+      <p id="redo-0" style="display:none;" class="qtext">It looks like you are having trouble hearing the tone. Before you continue, make sure your earbuds / headphones / Airpods®️ are properly connected, and <b>set your device volume to 100%</b> (maximum).</p>
+      <p id="redo-1" style="display:none;" class="qtext">This tone should only be heard in one ear. Before you continue, make sure your earbuds / headphones / Airpods®️ are properly connected, and <b>set your device volume to 100%</b> (maximum).</p>
+      <p id="redo-2" style="display:none;" class="qtext">It looks like you have your listening device earpieces <b>reversed</b>. Before you continue, please put the right earpiece in the right ear.</p>
+      <button style ="bottom: 2%; width: 80%; max-width: 40vh; height: 15vh; margin:0px; margin-top: 5%; font-size: 7vh; color:white; background-color:#4477ee; font-weight: bold; cursor: pointer; border: 0.75vmin solid; border-color: #002d72; border-radius: 3vh;" onclick="return show('+1');">Ok</button>
+    </div>
+
+    <div id="nextBeep" style="display:none; color:#000000; text-align: center;">
+      <p id="nextBeep-0" class="qtext">Great! Now you're ready to start the test.</p>
+      <button id="nextBeep-1" style ="bottom: 2%; width: 80vmin; height: 20vh; margin:0px; margin-top: 5%; font-size: 9vmin; color:white; background-color:#4477ee; font-weight: bold; cursor: pointer; border: 0.75vmin solid; border-color: #002d72; border-radius: 3vh;" onclick="return show('beeps');">Begin Testing</button>
+    </div>
+
+    <div id="beepResults" style="display:none; color:#000000; text-align: center;">
+      <div style="margin: 0px; width:100%; height: 9vh; background-color: #ddeeff; display: table; overflow: hidden; text-align: center;">
+        <p id="section" style="margin: 0px; font-size: 4vh; font-weight: bold; display: table-cell; vertical-align: middle;">Results of Beep Test</p>
+      </div>
+      <svg version="1.1" id="graph" class="svgGraph" xlmns="https://www.w3.org/2000/svg" xlmns:xlink="https://www.w3.org/1999/xlink" viewBox="0 -30 860 640" font-size="20px" font-family="Verdana, Tahoma, Arial, san-serif" font-weight="600" style="float:left; margin: 0px 3% 0px 0px; width:65vmin; height:50vmin;">
+      </svg>
+      <p style="font-size: 2.5vh; margin: 0px; text-align: left; line-height: 1.5;"><br>&nbsp;&nbsp;<b style="color: blue;">X</b> = Left Ear&nbsp;&nbsp;<br class="resultsBreak">&nbsp;&nbsp;<b style="color: red;">O</b> = Right Ear</p>
+      <p id="results-2" class="textResults" style="font-size: 3vmin; margin: 0px; text-align: left; line-height: 1.5; padding: 0px 2% 0px 2%;">You did not complete the test.</p>
+      <p style="float: right; font-size: 2vh; font-style: italic; text-align: left; padding: 0px 2% 0px 2%; margin:0px;"><br><b>Disclaimer</b>: This app does NOT guarantee accuracy and does NOT substitute for an in-person diagnostic test. Please consult an audiologist for guidance.</p>
+      <button id="downloadBtn" class="bResults" onclick="return download();">Download Results</button>
+      <style>
+        .bResults{
+          color:black; background-color:#ddeeff; position:absolute; bottom: 4%; left: 10%; width: 80vmin; height: 18vh; margin:0px; font-size: 6vh; font-weight: bold; cursor: pointer; border: 0.75vmin solid; border-color: #002d72; border-radius: 3vh;
+        }
+        @media screen and (max-width: 80vmax) {
+          .textResults{font-size: 2.4vh !important;}
+          .svgGraph{width:100% !important; height:30vh!important;}
+          .resultsBreak{display: none!important;}
+          @media screen and (max-width: 45vmax) {
+            .bResults{font-size: 13.4vmin !important;}
+            .svgGraph{width:100% !important; height:30vh!important;}
+          }
+        }
+      </style>
+    </div>
+
+    <div id="buttons">
+      <button id="back" class="back" style = "display: none; position: absolute; bottom: 2%; left: 2%; width: 25vh; height: 10%; margin:0px; font-size: 4.5vh; color:black; background-color:#ddeeff; font-weight: bold; cursor: pointer; border: 0.75vmin solid; border-color: #002d72; border-radius: 3vh;" onclick="return show('-1');">
+        <svg version="1.1" class="arrowL" style="height:1.2em; margin:0; vertical-align: text-top;" viewBox="0.0 0.0 76.8 76.8" fill="#eee" stroke="#000" stroke-linecap="butt" stroke-miterlimit="10" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-width="2.0" stroke-linejoin="round" d="m74.9 54.3l-36.5 0l0 20.8l-36.5 -36.7l36.5 -36.7l0 20.8l36.5 0z" fill-rule="evenodd"/>
+        </svg>&nbspBack
+        <style>
+          @media screen and (max-width: 65vmax) {
+              .back{ font-size: 7vw !important; width: 38vw!important; }
+              @media screen and (max-width: 50vmax) {
+                 .arrowL{ display: none !important; }
+                .back{ font-size: 10vw !important; }
+              }
+          };
+        </style>
+      </button>
+      <button id="next" class="next" style = "display: none; position: absolute; bottom: 2%; right: 2%; width: 25vh; height: 10%; margin:0px; font-size: 4.5vh; color:white; background-color:#4477ee; font-weight: bold; cursor: pointer; border: 0.75vmin solid; border-color: #002d72; border-radius: 3vh;" onclick="return show('+1');">Next&nbsp<svg version="1.1" class="arrowR" style="height:1.2em; margin:0; vertical-align: text-top;" viewBox="0.0 0.0 76.8 76.8" fill="#eee" stroke="#000" stroke-linecap="butt" stroke-miterlimit="10" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-width="2.0" stroke-linejoin="round" d="m1.9 22.5l36.5 0l0 -20.8l36.5 36.7l-36.5 36.7l0 -20.8l-36.5 0z" fill-rule="evenodd"/>
+        </svg>
+        <style>
+          @media screen and (max-width: 65vmax) {
+              .next{ font-size: 7vw !important; width: 38vw!important; }
+              @media screen and (max-width: 50vmax) {
+                .arrowR{ display: none !important; }
+                .next{ font-size: 10vw !important; }
+              }
+          };
+        </style>
+      </button>
+    </div>
+  </div>
+  
+  <style>
+    .mainLayout{
+      width: 100vmin; height: 100vh; max-width: 100vw; max-height: 100vh; background-color: white; background-attachment: fixed; text-align: center; position:relative; top: 0px; left: 0px; margin: auto;
+    }
+  </style>
+
+<div id="overlay" class="overlay" style="display: none; width: 100vw; height: 100vh; background-color:transparent; /*display:none;*/ position:absolute; top: 0px; left:0px; margin:0px; text-align: center; Font-family: Arial, sans-serif;">
+  <button style="width: 100vw; height: 100vh; background-color: transparent; background-color:#000b; border: none;" onclick="hide('overlay');"></button>
+    <p class="warning" style="position: absolute; margin: auto; left: 0; right: 0; bottom: 60%; width:80vmin; background-color: #ffd; font-size: 6vh; cursor: default;"><b>Warning:</b> Your progress will NOT be saved if you quit the test now.</p>
+    <button class="quit" style="position: absolute; margin: auto; left: 0; right: 0; top: 45%; width:80vmin; height: 15%; background-color: #ffcccc; font-weight: bold; font-size: 8vh; color:black; cursor: pointer; border: 0.75vh solid; border-color: red; border-radius: 4vmin;" onclick="quit();">Quit</button>
+    <button class="cancel" style="position: absolute; margin: auto; left: 0; right: 0; top:65%; width:80vmin; height: 15%; background-color:#ddeeff; font-weight: bold; font-size: 8vh; color: black; cursor: pointer; border: 0.75vh solid; border-color: #002d72; border-radius: 4vmin;" onclick="hide('overlay');">Go back</button>
+    <style>
+      @media screen and (max-width: 60vmax) {
+        .warning{ font-size: 12vw!important; }
+        .quit{ font-size: 13vw!important; }
+        .cancel{ font-size: 13vw!important; }
+      };
+    </style>
+  </div>
+
+  <div class="screenSmall" style="display: none; width: 100%; height: 100%; background-color: yellow; position:absolute; top: 0px; left:0px; margin:0px; padding:0px; justify-content:center; align-items: center; text-align: center; flex: 1; Font-family: Arial, sans-serif; font-size: 14.5vmin;">
+    <div>
+      <b>This screen size is too small.</b> Please rotate or try with a bigger device.
+    </div>
+  </div>
+  <style>
+    @media screen and (max-height: 320px), screen and (max-width: 200px) {
+      .screenSmall{display: flex !important;}
+      .mainLayout{display: none !important;}
+      .overlay{display: none !important;}
+    };
+  </style>
+  <div class="screenNarrow" style="display: none; width: 100%; height: 100%; background-color: yellow; position:absolute; top: 0px; left:0px; margin:0px; padding:0px; justify-content:center; align-items: center; text-align: center; flex: 1; Font-family: Arial, sans-serif; font-size: 14.5vmin;">
+    <div>
+      <b>This browser window size is too narrow.</b> Please increase the width or try with a bigger device.
+    </div>
+  </div>
+  <style>
+    @media screen and (max-width: 40vmax) {
+      .screenNarrow{display: flex !important;}
+      .mainLayout{display: none !important;}
+      .overlay{display: none !important;}
+    };
+  </style>
+
+  <script>
+    var pageIDs = ['quit','home','about','question1','question2','question3','question4','question5','question6','question7','question8','sorry','allowMic','bgNoise','tooNoisy','noMic','begin','beeps','question9','question10','redo','nextBeep','beepResults'];
+    
+    var nSels = [4,3,4,4,4,5,5,4,4,3,2,4,3];//[q2,q3,q4,q5.0, q5.1, q5.2, q6, q7.0, q7.1, q8, q9, q10]
+    var StartIndexes = [0,4,7,12,20,30,40,16,50,60,68,70,80];
+    var page = 1;
+    var responses = new Array(15).fill(-1);//demographics + listening device type
+    //console.log(responses);//1k, 500hz, 2k, 4k, 6k, 8k; both left and right; within each, 0db, 10db ... 90db
+    var prevFontSize = 0;
+    var device = 0;
+
+    var stage = -1;//0= both ears, 1= left test, 2= ear 1, 3= ear 2
+
+    var FreqList = [500,1000,2000,4000,6000,8000];
+    var context = null;
+    var usingWebAudio = true;
+    var playing = false;
+    var osc = null;
+    var gainNode = null;
+    var freq = 1;//index
+    var gain = 3;//percent
+    var pan = 0; //stereo panning
+    var time = 1;
+    var period = 200;
+    
+    var beepTest = new Array(12).fill(-1);
+    var leap = 10;
+    var direction = 0;//-1 = decreasing decibels, 1 = incr.
+    var nBeeps = 0;
+    var playTimeout = null;
+    var stopTimeout = null;
+    var nohearTimeout = null;
+    var fails = new Array(19).fill(0);
+    var success0 = 0;
+    var react = 1000;//1 second after beep
+    var canPress = false;
+
+    var diagnose = 0;
+    var diff = [0,0];
+    //output = a*(b^x)+c ;  x = decibels (integer)
+    var dbEqns = [[[0.000473868,1.12211,-0.000163868],
+                [0.000579497,1.11449,-0.000469497],
+                [0.000290464,1.1183,-0.000220464],
+                [0.000531919,1.12459,-0.000521919],
+                [0.000193282,1.11959,-0.000093282],
+                [0.000745689,1.11601,-0.000725689]]];
+    var db = 40;//actual decibels
+    listeningDevices = ["Apple Earbuds / Airpods®️","Headphones","Other Earbuds"];
+
+    function setup(){
+      //document.getElementById('1330fa23be99901d_5').style.border = 'black';
+      //console.log(parent.window.frames[window.name].name);
+      console.log(window.frameElement.id);
+      window.frameElement.style = "margin: 0px; padding:0px; position: absolute; top: 0px; left: 0px; width: 100%; height: 100vh; background-color: white; background-attachment: fixed; z-index: 999999;";
+      //hide('home')
+      //page = 15;
+      //beepTest = [0,45,0,5,0,5,0,10,10,15,5,95];
+      //show('beepResults');
+      //responses[12] = 0;
+      //stage=2;
+      //device=0;
+      //pan=-1;
+      //show('begin');
+    }
+    function show(obj) {
+      if(obj == 'quit'){
+        if(pageIDs[page] == 'beepResults')
+          quit();
+
+        document.getElementById('overlay').style.display='block';
+        if(stage > -1 && page < 20){
+          Stop();
+          clearTimeout(playTimeout);
+          clearTimeout(stopTimeout);
+          clearTimeout(noHearTimeout);
+        }
+        return null;
+      }
+      document.querySelector('#buttons #back').style.display='none';
+      document.querySelector('#buttons #next').style.display='none';
+      var nPage = 0;
+      if(obj == '-1'){//back
+        obj = pageIDs[page-1];
+        nPage = page-1;
+        if(obj == 'question8' && responses[5] == 0){
+          nPage = 9;
+          obj = 'question7';
+        }
+        if(obj == 'question5' || obj == 'question7'){
+          nPage = page-2;
+          obj = pageIDs[page-2];
+        }
+      }else if(obj == '+1'){//next
+        obj = pageIDs[page+1];
+        nPage = page+1;
+        if(obj == 'question5' || obj == 'question7'){
+          nPage = page+2;
+          obj = pageIDs[page+2];
+        }
+      }
+      if(obj == 'question4' && responses[5] == 0 && 1 == 0){
+        nPage = 11;
+        obj = 'sorry';
+        document.querySelector('#pages #sorry #noConsent').style.display='none';
+        document.querySelector('#pages #sorry #noHearDevice').style.display='none';
+        document.querySelector('#buttons #back').style.display='none';
+      }else if(obj == 'question8' && responses[8] == 3){
+        nPage = 11;
+        obj = 'sorry';
+        document.querySelector('#pages #sorry #noConsent').style.display='none';
+        document.querySelector('#pages #sorry #noHearDevice').style.display='block';
+      }else if(obj == 'sorry'){
+        if(responses[10] == 1){
+          nPage = 11;
+          obj = 'sorry';
+          document.querySelector('#pages #sorry #noConsent').style.display='block';
+          document.querySelector('#pages #sorry #noHearDevice').style.display='none';
+          document.querySelector('#buttons #back').style.display='none';
+        }else{
+          nPage = 12;
+          obj = 'allowMic';
+          document.querySelector('#pages #qProgBar-0').style.display = 'none';
+          console.log("Responses:");
+          for(let i = 0; i < 4; i++){
+            if(responses[i] != -1)
+              console.log("Question 1: "+document.querySelector('#pages #question1 #q1-'+i).innerHTML.substring(2));
+          }
+          for(let i = 2; i < 9; i++){
+            if(i != 5 && i != 7 && i != 6)
+              console.log("Question "+i+": "+document.querySelector('#pages #question'+i+' #q'+i+'-'+responses[i+2]).innerHTML.substring(2));
+            else if(i == 6)
+              console.log("Question 6: "+listeningDevices[responses[i+2]]);
+          }
+          if(responses[6] == 1 && responses[8] == 0){
+            device = 0;
+          }
+        }
+      }else if(obj == 'beeps' || pageIDs[page] == 'redo'){//Start practice sect / actual test
+        if(stage < 2){
+          document.querySelector('#buttons #back').style.display='none';
+          document.querySelector('#pages #practiceSctBar').style.display='block';
+          document.querySelector('#pages #sctBar').style.display='none';
+        }else{
+          document.querySelector('#pages #sctBar').style.display='block';
+          document.querySelector('#pages #practiceSctBar').style.display='none';
+          if(pan == -1)
+            document.querySelector('#pages #sctBar #beepProg').innerHTML = 'Left ear progress:';
+          else
+            document.querySelector('#pages #sctBar #beepProg').innerHTML = 'Right ear progress:';
+        }
+        if(stage == 1){
+          obj = 'question9';
+          nPage = 18;
+          if(!playing)
+            pan = Math.round(Math.random())*2-1;
+        }else{
+          nPage = 17;
+          obj = 'beeps';
+          leap = 10;
+          nBeeps = 0;
+          db = 40;
+          fails = new Array(19).fill(0);
+          direction = 0;
+          playTimeout = setTimeout(Start, 2000);//to begin playing the beep
+          noHearTimeout = setTimeout(nohear, 2000+2000+react);//2secs until beep, 2secs of beeping, 2secs reaction time.
+        }
+      }else if(obj == 'question9'){
+        //document.querySelector('#pages #sctBar').style.display='none';
+        //document.querySelector('#pages #practiceSctBar').style.display='block';
+        if(page != 18)
+          Stop();
+        nPage = 18;
+        if(!playing){
+          pan = Math.round(Math.random())*2-1;
+          canPress = true;
+          responses[11] = -1;
+
+          playTimeout = setTimeout(Start, 500);
+        }
+      }else if(obj == 'question10'){
+        if(stage == 1 && responses[11] == (pan/2)+1.5){
+          Stop();
+          canPress = false;
+          nPage = 19;
+          stage = 2;
+        }else if(stage == 1){
+          show('redo');
+          if(responses[11] == 0){
+            document.querySelector('#pages #redo #redo-1').style.display='block';
+          }else if(responses[11] <= 2){
+            document.querySelector('#pages #redo #redo-2').style.display='block';
+          }else if(responses[11] == 3){
+            document.querySelector('#pages #redo #redo-0').style.display='block';
+          }
+          sizer();
+          return null;
+        }else{
+          nPage = 19;
+        }
+      }else if(obj == 'redo' || obj == 'nextBeep'){
+        if(stage >= 2){
+          if((responses[12] == 1 && stage == 2) || (responses[12] == 0 && stage == 3)){
+            pan = -1;
+            document.querySelector('#pages #nextBeep #nextBeep-0').innerHTML='Great! Now you\'re ready to start testing your <b>left ear</b>.';
+          }else{
+            pan = 1;
+            document.querySelector('#pages #nextBeep #nextBeep-0').innerHTML='Great! Now you\'re ready to start testing your <b>right ear</b>.';
+          }
+          document.querySelector('#pages #sctBar').style.display='none';
+          document.querySelector('#pages #practiceSctBar').style.display='none';
+          obj = 'nextBeep';
+          nPage = 21;
+        }else{
+          for(let i = 0; i < 3; i++)
+            document.querySelector('#pages #redo #redo-'+i).style.display='none';
+          nPage = 20;
+        }
+      }else if(obj == 'beepResults'){
+        document.querySelector('#pages #sctBar').style.display='none';
+        document.querySelector('#pages #practiceSctBar').style.display='none';
+        for(let ear = 0; ear < 2; ear++){
+          for(let i = 0; i < 6; i++){
+            if(beepTest[(ear*6)+i] == -1){
+              ear = 2;
+              diagnose = -1;
+              document.querySelector('#pages #beepResults #graph').style.display = 'none';
+              document.querySelector('#pages #beepResults #downloadBtn').style.display = 'none';
+              break;
+            }
+            //document.querySelector('#pages #beepResults #results-'+ear+'-'+i).innerHTML = beepTest[(ear*6)+i];
+            document.querySelector('#pages #beepResults #graph').innerHTML = drawGraph();
+            if(beepTest[(ear*6)+i] > 90)
+              diagnose = 4;
+            else if(beepTest[(ear*6)+i] >= 70 && diagnose < 3)
+              diagnose = 3;
+            else if(beepTest[(ear*6)+i] > 40 && diagnose < 2)
+              diagnose = 2;
+            else if(beepTest[(ear*6)+i] > 25 && diagnose < 1)
+              diagnose = 1;
+            else if(diagnose < 0)
+              diagnose = 0;
+            if(ear == 0){
+              if(Math.abs(beepTest[i]-beepTest[6+i]) >= 15){
+                diff[0] += 1;
+              }else if(diff[0] < 2)
+                diff[0] = 0;
+              if(Math.abs(beepTest[i]-beepTest[6+i]) >= 10){
+                diff[1] += 1;
+              }else if(diff[1] < 3){
+                diff[1] = 0;
+              }
+            }
+          }
+        }
+        if(diagnose == -1){
+          document.querySelector('#pages #beepResults #results-2').innerHTML = "You did not complete the test. There are missing results in at least one of the frequencies"
+        }else{
+          document.querySelector('#pages #beepResults #results-2').innerHTML = "The results <i>suggest</i> that you have ";
+          if(diagnose == 0){
+            document.querySelector('#pages #beepResults #results-2').innerHTML += "<b>normal</b> hearing"
+          }else if(diagnose == 1){
+            document.querySelector('#pages #beepResults #results-2').innerHTML += "<b>mild hearing loss</b>"
+          }else if(diagnose == 2){
+            document.querySelector('#pages #beepResults #results-2').innerHTML += "<b>moderate hearing loss</b>"
+          }else if(diagnose == 3){
+            document.querySelector('#pages #beepResults #results-2').innerHTML += "<b>severe hearing loss</b>"
+          }else{
+            document.querySelector('#pages #beepResults #results-2').innerHTML += "<b>profound hearing loss</b>"
+          }
+        }
+        if(diagnose > 0 && (diff[0] >= 2 || diff[1] >= 3))
+          document.querySelector('#pages #beepResults #results-2').innerHTML += " and a significant difference between your ears.";
+        else
+          document.querySelector('#pages #beepResults #results-2').innerHTML += ".";
+        //document.querySelector('#pages #beepResults #graph').innerHTML = "<circle cx=\"100\" cy\"100\" r=\"400\" fill=\"#000\"/>"
+        nPage = 22;
+      }else
+        nPage = pageIDs.indexOf(obj);
+      
+      if(obj != 'quit'){
+        hide(pageIDs[page]);
+        page = nPage;
+        if(obj == 'home'){
+          document.getElementById('home').style.display='flex';
+          document.querySelector('#buttons #back').style.display='none';
+          document.querySelector('#buttons #next').style.display='none';
+          document.querySelector('#pages #qProgBar-0').style.display = 'none';
+          document.querySelector('#pages #topbar #escape').style.display='none';
+          document.querySelector('#pages #topbar').style.display='none';
+        }else{
+          document.querySelector('#pages #'+obj).style.display='block';
+          document.querySelector('#pages #topbar').style.display='block';
+          document.getElementById('pages').style.display='block';
+          if(obj == 'about')
+            document.querySelector('#buttons #back').style.display='block';
+          else{
+            document.querySelector('#pages #topbar #escape').style.display='block';
+
+            if(obj == 'question1'){
+              document.querySelector('#pages #qProgBar-0').style.display = 'block';
+              document.querySelector('#pages #qProgBar-1').style.width = '8.3%';
+              for(let i = 0; i < nSels[0]; i++){
+                if(responses[i] == 1){
+                  let qc = document.querySelector('#pages #question1 #q1-'+i);
+                  qc.innerHTML = "☑ "+ qc.innerHTML.substring(2);
+                  qc.style.background = '#ddeeff';
+                }else{
+                  let qc = document.querySelector('#pages #question1 #q1-'+i);
+                  qc.innerHTML = "☐ "+ qc.innerHTML.substring(2);
+                  qc.style.background = 'white';
+                }
+              }
+              document.querySelector('#buttons #back').style.display='none';
+              if(responses[0] != -1 || responses[1] != -1 || responses[2] != -1 || responses[3] != -1)
+                document.querySelector('#buttons #next').style.display='block';
+              else
+                document.querySelector('#buttons #next').style.display='none';
+            }else if(obj.includes('question')){
+              pgWidth = parseInt(obj.substring(8));
+              if(pgWidth < 9){
+                document.querySelector('#pages #qProgBar-0').style.display = 'block';
+                if(page > 6)// > q4
+                  pgWidth--;
+                if(page > 8)// > q6
+                  pgWidth--;
+                document.querySelector('#pages #qProgBar-1').style.width = ((pgWidth/0.06)-(100/12))+"%";
+              }
+              var arrQName = getQName();
+              if(!((page == 7 && responses[page-1] == 3) || (page == 9 && responses[page-1] == 2))){//q5,7
+                let count = arrQName[1];
+                tPage = page;
+                if(page > 12)//q9,10
+                  tPage = page-7;
+
+                for(let i = 0; i < count; i++){
+                  if(i == responses[tPage]){
+                    
+                    let radio = document.querySelector(arrQName[0]+'-'+i);
+                    radio.innerHTML = "◉ "+ radio.innerHTML.substring(2);
+                    radio.style.background = '#ddeeff';
+                  }else{
+                    let radio = document.querySelector(arrQName[0]+'-'+i);
+                    radio.innerHTML = "⭘ "+ radio.innerHTML.substring(2);
+                    radio.style.background = 'white';
+                  }
+                }
+              }
+              if(obj == 'question5' || obj == 'question7'){
+                nDivs = 4;
+                if(obj == 'question7')
+                  nDivs = 3;
+                for(let i = 0; i < nDivs; i++){
+                  if(responses[page-1] == i)
+                    document.querySelector('#pages #'+obj+' #q'+(nPage-2)+'_'+i+'div').style.display='block';
+                  else
+                    document.querySelector('#pages #'+obj+' #q'+(nPage-2)+'_'+i+'div').style.display='none';
+                }
+              }
+              document.querySelector('#buttons #back').style.display='block';
+              if(responses[tPage] != -1 || (obj == 'question5' && responses[6] == 3) || (obj == 'question7' && responses[8] == 2))
+                document.querySelector('#buttons #next').style.display='block';
+              else
+                document.querySelector('#buttons #next').style.display='none';
+              if(obj == 'question9' || obj == 'question10')
+                document.querySelector('#buttons #back').style.display='none';
+            }else if(obj == 'begin'){
+              document.querySelector('#buttons #next').style.display='block';
+              stage = 0;
+            }
+          }
+          sizer();
+        }
+      }
+    }
+
+    function hide(obj) {
+      if(obj == 'overlay'){
+        document.getElementById('overlay').style.display='none';
+        if(stage == 1){
+          show('question9');
+        }else if(stage > -1 && pageIDs[page] != 'question10'){
+          show('beeps');
+        }
+      }else if(obj == 'home')
+        document.getElementById(obj).style.display='none';
+      else{
+        document.querySelector('#pages #'+obj).style.display='none';
+        document.getElementById('pages').style.display='none';
+      }
+    }
+
+    function quit(){
+      hide(pageIDs[page]);
+      hide('overlay');
+      show('home');
+      document.querySelector('#pages #practiceSctBar').style.display='none';
+      document.querySelector('#pages #sctBar').style.display='none';
+      page = 1;
+      responses = new Array(15).fill(-1);//demographics + listening device type
+      //console.log(responses);//1k, 500hz, 2k, 4k, 6k, 8k; both left and right; within each, 0db, 10db ... 90db
+      prevFontSize = 0;
+      device = 0;
+
+      stage = -1;//0= both ears, 1= left test, 2= ear 1, 3= ear 2
+
+      freq = 1;//index
+      gain = 3;//percent
+      pan = 0; //stereo panning
+      time = 1;
+      
+      beepTest = new Array(12).fill(-1);
+      leap = 10;
+      direction = 0;//-1 = decreasing decibels, 1 = incr.
+      nBeeps = 0;
+      playTimeout = null;
+      stopTimeout = null;
+      nohearTimeout = null;
+      fails = new Array(19).fill(0);
+      success0 = 0;
+      canPress = false;
+
+      diagnose = 0;
+      diff = [0,0];
+    }
+
+    function response(index){
+      if(index <= 3){
+        var qc = document.querySelector('#pages #question1 #q1-'+index)
+        if(responses[index] == -1)
+          responses[index] = 1;
+        else if(responses[index] == 1)
+          responses[index] = -1;
+        
+        show('question1');
+      }else if(index < 70){
+        let i = index-getQName()[2];
+        if(responses[page] != i){
+          responses[page] = i;
+          show('question'+(page-2));
+        }
+      }else{//q9,10
+        let i = index-getQName()[2];
+        if(responses[page-7] != i){
+          responses[page-7] = i;
+          show('question'+(page-9));
+        }
+      }
+    }
+
+    function getQName(){
+      var nExtension = -1;
+        var ind = page-3;
+        if(ind == 4){//q5
+          ind += responses[6];
+          nExtension = responses[6];
+        }else if(ind == 5)//q6
+          ind += 2;
+        else if(ind == 6){//q7
+          ind += 2+responses[8];
+          nExtension = responses[8];
+        }else if(ind == 7)//q8
+          ind += 3;
+        else if(ind > 8)//q9,10
+          ind = page-7;
+        var qName = '#pages #question'+(page-2)+' #q'+(page-2);
+        if(nExtension != -1)
+          qName = '#pages #question'+(page-2)+' #q'+(page-2)+"_"+nExtension;
+        else if(page > 12)//q9,10
+          qName = '#pages #question'+(page-9)+' #q'+(page-9);
+        return [qName, nSels[ind], StartIndexes[ind]];
+    }
+
+    function sizer(){
+      var objects;
+      var heights;
+      var setPrevSize = 0;
+      var fixTextSize = 0;
+
+      if(pageIDs[page] == 'about'){
+        objects = [['#pages #about #text'],['#pages #about #title']];
+        heights = [0.68,0.06];
+      }else if(pageIDs[page].includes('question')){
+        arrQName = getQName();
+        objects = [[arrQName[0]]];
+
+        if((page != 7 || responses[6] != 3) && (page != 9 ||responses[8] != 2)){
+          for(let i = 0; i < arrQName[1]; i++)
+            objects[0].push(arrQName[0]+'-'+i);
+        }
+        //objects = [['#pages #question1 #q1','#pages #question1 #q1-0','#pages #question1 #q1-1','#pages #question1 #q1-2','#pages #question1 #q1-3']];
+        heights = [0.63];
+        if(pageIDs[page] == 'question9')
+          heights = [0.58];
+        if(pageIDs[page] == 'question1' || pageIDs[page] == 'question9')
+          setPrevSize = 1;
+      }else if(pageIDs[page] == 'sorry'){
+        objects = [['#pages #sorry #sorryText','#pages #sorry #noConsent','#pages #sorry #noHearDevice']];
+        heights = [0.58];
+      }else if(pageIDs[page] == 'allowMic' || pageIDs[page] == 'bgNoise' || pageIDs[page] == 'testBeeps' || pageIDs[page] == 'beeps' || pageIDs[page] == 'nextBeep'){
+        objects = [['#pages #'+pageIDs[page]+' #'+pageIDs[page]+'-0']];
+        heights = [0.45];
+        if(pageIDs[page] == 'allowMic' || pageIDs[page] == 'beeps' || pageIDs[page] == 'bgNoise')
+          heights = [0.3];
+        else if(pageIDs[page] == 'nextBeep')
+          heights = [0.2];
+        if(pageIDs[page] == 'allowMic')
+          setPrevSize = 1;
+      }else if(pageIDs[page] == 'tooNoisy' || pageIDs[page] == 'begin'){
+        objects = [['#pages #'+pageIDs[page]+' #'+pageIDs[page]+'-0','#pages #'+pageIDs[page]+' #'+pageIDs[page]+'-1']];
+        heights = [0.58];
+      }else if(pageIDs[page] == 'redo'){
+        objects = [['#pages #'+pageIDs[page]+' #'+pageIDs[page]+'-0','#pages #'+pageIDs[page]+' #'+pageIDs[page]+'-1','#pages #'+pageIDs[page]+' #'+pageIDs[page]+'-2']];
+        heights = [0.58];
+      }else if(pageIDs[page] == 'noMic'){
+        objects = [['#pages #noMic #noMic-0','#pages #noMic #noMic-1','#pages #noMic #noMic-2','#pages #noMic #noMic-3']];
+        heights = [0.6];
+      // }else if(pageIDs[page] == 'beepResults'){
+      //   objects = [['#pages #beepResults #results-2']];
+      //   heights = [0.2];
+      }else{
+        return null;
+      }
+      
+      for(var n = 0; n < objects.length; n++){
+        var obj = objects[n];
+        var height = heights[n];
+        var target = Math.floor(height*document.body.offsetHeight);
+        var elem = new Array(obj.length);
+        var style = new Array(obj.length);
+        var totalHeight = 0;
+        for(var m = 0; m < obj.length; m++){
+          elem[m] = document.querySelector(obj[m]);
+          style[m] = window.getComputedStyle(elem[m]);
+          if(m == 0 && prevFontSize != 0 && !setPrevSize)
+            elem[m].style.fontSize = prevFontSize+"px";
+          else if(m > 0 && parseFloat(style[0].getPropertyValue('font-size')) != parseFloat(style[m].getPropertyValue('font-size')))
+            elem[m].style.fontSize = style[0].getPropertyValue('font-size')
+          totalHeight += elem[m].offsetHeight;
+        }
+        if(prevFontSize != 0 && !setPrevSize && totalHeight <= target)
+          continue;
+        
+        var nTimes = 0;
+        var upper = 1296;
+        var lower = 2;
+        var overshoots = 1;
+        var lines = 0
+        var best = 0;
+        var inRange = false;
+        var change = 0;
+        while(target != totalHeight){
+          nTimes++;
+          lines = 0;
+          totalHeight = 0;
+          for(var m = 0; m < obj.length; m++){
+            lines += Math.round(elem[m].offsetHeight / parseFloat(style[m].getPropertyValue('line-height')));
+            totalHeight += elem[m].offsetHeight;
+          }
+          
+          change = Math.round(((target - totalHeight)/(1.5*overshoots*lines))*4)/4.0;
+          
+          if((change < 0.25 && change > 0) || (change == 0 && target > totalHeight)){
+            change = 0.25;
+          }else if((change > -0.25 && change < 0) || (change == 0 && target < totalHeight)){
+            change = -0.25;
+          }else if(inRange && Math.abs(change) > (upper - lower)/2.0){
+            overshoots++;
+            if(change > 0)
+              change = Math.max(Math.round(upper - lower)/4.0, 0.25);
+            else
+              change = Math.min(-Math.round(upper - lower)/4.0, -0.25)
+          }
+
+          var font = Math.round(parseFloat(style[0].getPropertyValue('font-size'))*4)/4.0;
+          if(change > 0 && font > lower)
+            lower = font;
+          else if(change < 0 && font < upper)
+            upper = font;
+          
+          if(upper - lower <= 0.25){
+            for(var m = 0; m < obj.length; m++)
+              elem[m].style.fontSize = lower+"px";
+            break;
+          }
+          
+          font += change;
+          if(font >= upper || font <= lower){
+            overshoots++;
+            inRange = true;
+            for(var m = 0; m < obj.length; m++)
+              elem[m].style.fontSize = (Math.round((upper + lower)*2)/4.0) +"px";
+          }else{
+            for(var m = 0; m < obj.length; m++)
+              elem[m].style.fontSize = font+"px";
+          }
+          
+          if(nTimes > 50)
+            break;
+        }
+        totalHeight = 0;
+        for(var m = 0; m < obj.length; m++)
+          totalHeight += elem[m].offsetHeight;
+        
+        if(setPrevSize == 1)
+          prevFontSize = parseFloat(style[0].getPropertyValue('font-size'));
+        else if(setPrevSize == 2)
+          prevFontSize = 0;
+      }
+    }
+    
+    function heard(){
+      if(canPress){
+        clearTimeout(noHearTimeout);
+        clearTimeout(playTimeout);
+        Stop();
+        
+        canPress = false;
+        if(stage == 0){//both ears calibration
+          stage = 1;
+          show('+1');
+          return null;
+        }
+        if(db == 0){
+          success0 += 1;
+          if(success0 == 2){
+            console.log('Succeeded twice at 0 dB');
+            nextFreq();
+            beepTest[((pan+1)*3)+freq] = 0;
+            return null;
+          }
+        }
+        if(direction == 1)
+          leap = 5;
+        direction = -1;
+        nextBeep(1);
+      }
+    }
+    
+    function nohear(){
+      canPress = false;
+      if(direction == -1)
+        leap = 5;
+      direction = 1;
+      if(stage != 0)
+        fails[db/5]++;
+      if (fails.includes(2)){//check if failed to hear twice
+        console.log('Failed twice at '+ db+ ' dB');
+        nextFreq();
+        return null;
+      }else{
+        nextBeep(0);
+      }
+    }
+
+    function nextBeep(boolDelay){
+      nBeeps += 1;
+      if(gain >= 1 && stage == 0){
+        console.log('Failed at 100% volume output!');
+        show('redo');
+        document.querySelector('#pages #redo #redo-0').style.display='block';
+        sizer();
+        return null;
+      }else{
+        db += direction*leap;
+      }
+      if(db < 0)
+        db = 0;
+      else if(db > 90 && stage > 0)
+        db = 90
+      
+      let delay = Math.floor((Math.random()*1500)+1500);
+      if(boolDelay == 0)
+        delay = 0;
+      playTimeout = setTimeout(Start, delay);
+      noHearTimeout = setTimeout(nohear, delay+2000+react);
+    }
+    
+    function nextFreq(){
+      beepTest[((pan+1)*3)+freq] = db+5;
+      if(freq == 5 && stage == 3){
+        show('beepResults');
+        return;
+      }
+
+      if(freq == 1){
+        freq = 0;
+        document.querySelector('#pages #sctBar #sctProgBar').style.width = "25%";
+      }else if(freq == 0){
+        freq = 2;
+        document.querySelector('#pages #sctBar #sctProgBar').style.width = "41.7%";
+      }else{
+        freq += 1;
+        document.querySelector('#pages #sctBar #sctProgBar').style.width = (((freq+1)/0.06)-(100/12)) +"%";
+      }
+      leap = 10;
+      console.log('Took '+ (nBeeps+1) + ' beeps');
+      success0 = 0;
+      nBeeps = 0;
+      db = 40;
+      fails = new Array(19).fill(0);
+      direction = 0;
+      
+      
+      if(freq > 5 && stage == 2){
+        document.querySelector('#pages #sctBar #sctProgBar').style.width = "8.3%";
+        document.querySelector('#pages #sctBar #sctProgBar')
+        stage = 3;
+        freq = 1;
+        pan = -pan;
+        show('nextBeep');
+        return null;
+      }
+      show('beeps')
+    }
+    function Stop() { 
+      if (playing && osc) {
+        clearTimeout(stopTimeout);
+        playing = false;
+        osc.stop();
+        console.log("STOPPED PLAYING. Stage = "+stage);
+      }
+    }
+    function Start() { 
+      if(!playing){
+        usingWebAudio = true;
+        panNode = null;
+        if (typeof AudioContext !== 'undefined') {
+          context = new AudioContext();
+        } else if (typeof webkitAudioContext !== 'undefined') {
+          context = new webkitAudioContext();
+        } else {
+          usingWebAudio = false;
+        }
+        //button.style.backgroundColor = "salmon";
+        //button.value = "Stop";
+        //document.getElementById("desc").style.display = 'block';
+        playing = true;
+        canPress = true;
+        osc = context.createOscillator();
+        osc.frequency.value = FreqList[freq];
+        gainNode = context.createGain();
+        gain = Math.min(100, dbEqns[device][freq][0]*(dbEqns[device][freq][1]**db)+dbEqns[device][freq][2])/100.0;
+        gainNode.gain.value = gain;
+        osc.connect(gainNode);
+        //gainNode.connect(context.destination);
+        panNode = context.createStereoPanner();
+        osc.type = "sine";
+        osc.connect(gainNode);
+        gainNode.connect(panNode);
+        panNode.connect(context.destination);
+        panNode.pan.value = pan;
+        /* panNode.panningModel = 'HRTF';
+        panNode.pan.value = pan;
+        gainNode.connect(panNode);
+        panNode.connect(context.destination); */
+        time = 1;
+        osc.start();
+        pulses();
+        console.log("NOW PLAYING: "+FreqList[freq]+"hz at "+db+" db (Gain = "+ Math.round(gain*100000)/100000.0+"%) and Pan = "+pan+" Stage = "+stage);
+        if(stage != 1)
+          stopTimeout = setTimeout(Stop,2000);
+      }
+    }
+    function pulses(){
+      time = -time;
+      if(time == 1){
+        gainNode.gain.linearRampToValueAtTime(0, context.currentTime + period/1000.0);
+      }else if(time == -1)
+        gainNode.gain.linearRampToValueAtTime(gain, context.currentTime + period/1000.0);
+      if(osc && playing)
+        setTimeout(pulses,period);
+    }
+    /*window.onload = function() {
+      if (!usingWebAudio) {
+        //document.getElementById("audioControls").innerHTML = "<p>Web audio required.</p>"
+      }
+    }*/
+    var vols = [-1];
+    var volInd = 0;
+    var tries = 0;
+    var micSecs = 5;
+    var gainNode;
+    function getMic(){
+      tries++;
+      if(tries == 1){
+        navigator.getUserMedia = 
+          navigator.getUserMedia ||
+          navigator.webkitGetUserMedia ||
+          navigator.mozGetUserMedia;
+      }else if(tries >= 4){
+        document.querySelector('#pages #noMic #noMic1').style.display = "none";
+        document.querySelector('#pages #noMic #noMic2').style.display = "block";
+        show('noMic');
+        return;
+      }
+      const stream = navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
+        let audioContext = new AudioContext();
+        let analyser = audioContext.createAnalyser();
+        let microphone = audioContext.createMediaStreamSource(stream);
+        let javascriptNode = audioContext.createScriptProcessor(2048, 1, 1);
+
+        analyser.smoothingTimeConstant = 0.5;
+        analyser.fftSize = 1024;
+        microphone.connect(analyser);
+        analyser.connect(javascriptNode);
+        javascriptNode.connect(audioContext.destination);
+
+        show('bgNoise');
+
+        vols = new Array(500).fill(-1);
+        volInd = 0;
+        setTimeout(changeMic, 500);
+        setTimeout(function(){
+          stream.getTracks().forEach(function(track) {
+            track.stop();
+          });
+          audioContext.close();
+          let sum = 0;
+          for(let i = 0; i < volInd; i++){
+            sum += vols[i];
+            if(i > 3 && vols[i] > 25){
+              vols[0] = 100;
+              console.log("Detected loud background noise: "+vols[i]+"%");
+              break;
+            }
+          }
+          console.log("Audio samples: "+volInd+" avg: "+(sum / volInd));
+
+          if(sum / volInd >= 6 || vols[0] == 100){
+            show('tooNoisy');
+          }else{
+            show('begin');
+          }
+        }, 5050);
+
+        javascriptNode.onaudioprocess = function() {
+          var array = new Uint8Array(analyser.frequencyBinCount);
+          analyser.getByteFrequencyData(array);
+          var values = 0;
+
+          var length = array.length;
+          for (var i = 0; i < length; i++) {
+            values += (array[i]);
+          }
+          dispGraphics(Math.round(values/length));
+        }
+      }).catch(function(err){
+        document.querySelector('#pages #noMic #noMic1').style.display = "block";
+        document.querySelector('#pages #noMic #noMic2').style.display = "none";
+        show('noMic');
+      });
+    }
+    function dispGraphics(vol) {
+      vols[volInd] = vol;
+      volInd++;
+      if(vol < 15){
+        document.querySelector('#pages #bgNoise #micSVG').style.fill = "rgb("+String(255*(vol/15))+", 255, 125)";
+      }else if(vol < 30){
+        document.querySelector('#pages #bgNoise #micSVG').style.fill = "rgb(255, "+String(127*(1-((vol-15)/15))+127)+", 125)";
+      }else{
+        document.querySelector('#pages #bgNoise #micSVG').style.fill = "rgb(255, 127, 125)";
+      }
+      document.querySelector('#pages #bgNoise #micSVG').setAttribute('r', Math.min(vol+120,150));
+    }
+    function changeMic(){
+      micSecs -= 0.5;
+      if(micSecs%1 == 0){
+        document.querySelector('#pages #bgNoise #micBg1').style.fill = "#ffcccc";
+        document.querySelector('#pages #bgNoise #micBg2').style.fill = "#ffcccc";
+        document.querySelector('#pages #bgNoise #bgNoise-0').innerHTML = "Testing for background noise<br>("+ micSecs+" seconds remaining...)";
+      }else{
+        document.querySelector('#pages #bgNoise #micBg1').style.fill = "#ff7777";
+        document.querySelector('#pages #bgNoise #micBg2').style.fill = "#ff7777";
+      }
+      if(micSecs > 0)
+        setTimeout(changeMic, 500);
+      else
+        micSecs = 5;
+    }
+
+    function drawGraph(){
+      var svgText = "<rect x = \"100\" y = \"50\" width = \"600\" height = \"170\" fill=\"#cfc\"/><rect x = \"100\" y = \"220\" width = \"600\" height = \"75\" fill=\"#ffc\"/><rect x = \"100\" y = \"295\" width = \"600\" height = \"150\" fill=\"#fec\"/><rect x = \"100\" y = \"445\" width = \"600\" height = \"105\" fill=\"#fcc\"/><rect x = \"100\" y = \"550\" width = \"600\" height = \"50\" fill=\"#faa\"/><line x1 = \"100\" y1 = \"50\" x2 = \"100\" y2 = \"600\" stroke=\"black\" stroke-width=\"2\"/><line x1 = \"100\" y1 = \"50\" x2 = \"700\" y2 = \"50\" stroke=\"black\" stroke-width=\"2\"/><text x = \"715\" y = \"125\" stroke=\"none\" stroke-width=\"none\" fill=\"black\" >Normal<tspan x = \"715\" dy = \"25\">Hearing</tspan><tspan x = \"715\" dy = \"105\">Mild</tspan><tspan x = \"715\" dy = \"25\">Hearing loss</tspan><tspan x = \"715\" dy = \"90\">Moderate</tspan><tspan x = \"715\" dy = \"25\">Hearing loss</tspan><tspan x = \"715\" dy = \"95\">Severe</tspan><tspan x = \"715\" dy = \"25\">Hearing loss</tspan><tspan x = \"715\" dy = \"55\">Profound</tspan><tspan x = \"715\" dy = \"25\">Hearing loss</tspan></text><polyline points = \"";
+      for(let i = 0; i < 6; i++)
+        svgText += " "+ (100*i+135) + "," + (((beepTest[i])/5)*25+95);
+      svgText += "\" stroke=\"#88f\" stroke-width=\"4.0\" fill=\"none\"/><polyline points = \"";
+      for(let i = 0; i < 6; i++)
+        svgText += " "+ (100*i+135) + "," + (((beepTest[6+i])/5)*25+95);
+      svgText += "\" stroke=\"#f88\" stroke-width=\"4.0\" fill=\"none\" stroke-dasharray=\"4\"/><text stroke=\"none\" stroke-width=\"1.5\" fill=\"black\" text-anchor=\"end\">";
+      for(let i = 0; i <= 100; i+=10)
+        svgText += "<tspan x = \"90\" y = \""+(5*i+100)+"\">"+i+"</tspan>";
+      svgText += "</text><text stroke=\"none\" stroke-width=\"none\" fill=\"black\" x = \"120\" y = \"40\">500";
+      for(let i = 1; i < 6; i++)
+        svgText += "<tspan x = \""+(i*100+120)+"\" y = \"40\" >"+FreqList[i]+"</tspan>";
+      svgText += "</text><g stroke=\"red\" stroke-width=\"5.0\" fill=\"none\">";
+      for(let i = 0; i < 6; i++)
+        svgText += "<circle cx = \""+ (100*i+135) +"\" cy = \""+ (((beepTest[6+i])/5)*25+95) +"\" r = \"10\"/>"
+      svgText += "</g><g stroke=\"blue\" stroke-width=\"5.0\" fill=\"none\">";
+      for(let i = 0; i < 6; i++)
+        svgText += "<line x1 = \""+ (i*100+145) +"\" y1 = \""+ (((beepTest[i])/5)*25+105) +"\" x2 = \""+ (i*100+125) +"\" y2 = \""+ (((beepTest[i])/5)*25+85) +"\"/><line x1 = \""+(i*100+145)+ "\" y1 = \""+ (((beepTest[i])/5)*25+85) +"\" x2 = \""+(i*100+125)+"\" y2 = \""+ (((beepTest[i])/5)*25+105) +"\"/>";
+      svgText += "</g><text x = \"300\" y = \"0\" stroke=\"none\" fill=\"black\" font-size=\"25px\">Frequency (Hz)</text><text x = \"50\" y = \"400\" stroke=\"none\" fill=\"black\" font-size=\"25px\" transform = \"rotate(-90, 40, 400)\">Volume (dB)</text>";
+      return svgText;
+    }
+    var downloadBool = false;
+    function download(){
+      if(!downloadBool){
+        downloadBool = true;
+        document.querySelector('#pages #beepResults #downloadBtn').innerHTML = "Downloading...";
+        document.querySelector('#pages #beepResults #downloadBtn').style.background = "#eee";
+        if(diagnose == -1)
+          return null;
+        var dateTime = Date.now();
+        dateTime = new Intl.DateTimeFormat('en', { timeStyle: "short", dateStyle: "medium" }).format(dateTime).toString();
+        var date = dateTime.substring(0,dateTime.lastIndexOf(',')).replace(',','').replace(',','');
+        var time = dateTime.substring(dateTime.lastIndexOf(',')+2);
+        console.log("DateTime: "+date+" at "+time);
+        
+        var element = document.createElement('a');
+        var text = "<!DOCTYPE html><html lang=\"en\" style = \"width: 100vw; height: 100vh; background-color: white;\"><head><meta charset=\"UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Hearing Test Results</title></head><body style=\"font-family: Verdana, Tahoma, Arial, sans-serif;\"><h1 style=\"font-size: 2.2rem;\">Results for hearing test on "+ date+" at "+ time +"</h1><p style=\"font-size: 1.5rem;\"><b>Device Used:</b> ";
+        devices = ["Computer","iPhone® / iPad®","Android™ Device","Other Mobile Device"];
+        text += devices[responses[6]] + "<br><b>Listening Device:</b> "+listeningDevices[responses[8]]+"</p><p style=\"font-size: 1.5rem;\">The results indicate "
+        if(diagnose == 0){
+          text += "a <b>normal</b> hearing range"
+        }else if(diagnose == 1){
+          text += "<b>mild hearing loss</b>"
+        }else if(diagnose == 2){
+          text += "<b>moderate hearing loss</b>"
+        }else if(diagnose == 3){
+          text += "<b>severe hearing loss</b>"
+        }else{
+          text += "<b>profound hearing loss</b>"
+        }
+        if(diagnose > 0){
+          if(diff[0] >= 2 || diff[1] >= 3){
+            text += " and a significant difference between each ear.";
+          }else{
+            text += " a similar acuity between each ear.";
+          }
+        }
+
+        text += "</p><br><p style=\"font-size: 1.3rem;\"><b style=\"color: blue;\">X</b> = Left Ear&nbsp;&nbsp;&nbsp;&nbsp;<b style=\"color: red;\">O</b> = Right Ear</p><svg version=\"1.1\" xlmns=\"https://www.w3.org/2000/svg\" xlmns:xlink=\"https://www.w3.org/1999/xlink\" viewBox=\"0 -30 860 640\" font-size=\"20px\" font-family=\"Verdana, Tahoma, Arial, san-serif\" font-weight=\"600\" style=\"float:left; margin: 0px 3% 0px 0px; width:65vmin; height:50vmin;\">"+ drawGraph()+"</svg><br><table style=\"min-width: 75vh; font-size: 1.3rem; white-space: nowrap; text-align: center;\"><tr><th></th><th colspan=\"6\">Frequency (Hz)</th></tr><tr><th></th><div style=\"table-layout: fixed; white-space: nowrap;\"><th>500</th><th>1k</th><th>2k</th><th>4k</th><th>6k</th><th>8k</th></div></tr><tr><th style=\"text-align: right; width: 1%; white-space: nowrap;\">Left Ear (dB)</th><div style=\"table-layout: fixed; white-space: nowrap;\">";
+        for(let i = 0; i < 6; i++)
+          text += "<td>"+ beepTest[i] +"</td>";
+        text += "</div></tr><tr><th style=\"text-align: right;  width: 1%; white-space: nowrap;\">Right Ear (dB)</th><div style=\"table-layout: fixed;\">";
+        for(let i = 0; i < 6; i++)
+          text += "<td>"+ beepTest[6+i] +"</td>";
+        text += "</div></tr></table></body></html>";
+
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', "Hearing Test Results "+ date +".html");
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+        setTimeout(downloadTimeout, 2000);
+      }
+    }
+
+    function downloadTimeout(){
+      document.querySelector('#pages #beepResults #downloadBtn').innerHTML = "Download Results";
+      document.querySelector('#pages #beepResults #downloadBtn').style.background = "#def";
+      downloadBool = false;
+    }
+</script>
+</body>
+</html>
