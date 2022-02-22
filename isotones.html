@@ -4,7 +4,7 @@
 <head>
     <meta name="Description" content="Metronome written by Corey Trager in HTML and Javascript">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LynxClinical | Isochronic Tones</title>
+    <title>Isotones</title>
     <link rel="icon" type="image/x-icon"
         href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB2UlEQVRYR8XXT4hOURjH8c9oZMMskSJMk2RhYWOnKMaKUJrtxAILoRRZEEoSZTOJhZUsrKwldmpqUqSkLPyXlBUz/vfoKN3uO/e+17ndU+/ivuee5/c9z79z7oD/H5+wGm+bmBposqiw5htW4XkTW7kAduJ2lwDXsK9LgJmUBy/7hcgVgkHcxWb86AciJ0DoXsbBLgFC+wgu1oXI5YEowRGEvZ/YjVt1IHIBrMQQjmMMn7Eej6sgcgB8RQC8SmIbcQMfsA4x33PkAIgSHP4HIMTW4AFO4UIXAKF5FIexFNGuS0dbHgix+XiDHbjTBUBo3sRDnGsbIJLwdYnIgZSg0RtaDcGK5O6iyCg24FibANNplxHv4tiUkvB6mwBfUhmWAezBfTxrGyByoOxKdhLxa7URhQciB94VVOalk/F8VwC78AhPuwI4hEuzicdcjk5YFoIlWIypnAALsBfbsQwhHNew+C+eizlQpf1nvq4HtuEKFvWwGrt9X0ux8FIdgHFcxZxZBBam879vhiqAqO8niJLqNV5gOX71rV4jBCdwusJwnPmV2d60E55N97xe6yMJt+B7k93XScK1mMTcEoE4YPanamiqX6sKtuJM+gL+iHuYSHe+xsJ/F/4G8jBjIfCBJUEAAAAASUVORK5CYII=" />
 
@@ -250,22 +250,27 @@
       function play_gamma() {
         my_bpm_input.value = 3960
         stop_start()
+        my_play_button.focus()
       }
       function play_beta() {
         my_bpm_input.value = 1380
         stop_start()
+        my_play_button.focus()
       }
       function play_alpha() {
         my_bpm_input.value = 660
         stop_start()
+        my_play_button.focus()
       }
       function play_theta() {
         my_bpm_input.value = 360
         stop_start()
+        my_play_button.focus()
       }
       function play_delta() {
         my_bpm_input.value = 120
         stop_start()
+        my_play_button.focus()
       }
 
         function increment_volume(increment) {
@@ -339,7 +344,7 @@
 
 <body onload="my_onload()" onkeydown="handle_key(event)">
 
-    <h1>Isochronic Tones</h1>
+    <h1>LynxClinical | Isochronic Tones</h1>
 
     <div><button onclick="play_or_stop()" id="my_play_button">Start</button></div>
 
@@ -357,6 +362,32 @@
             <td><button class="increment" onclick="play_delta()">Delta</button></td>
             <td><button class="increment" onclick="play_gamma()">Gamma</button></td>
         </tr>
+    </table>
+
+    <br>
+    <div id="my_volume_label">Volume (1 to 10)</div>
+    <input id="my_volume_input" onchange="change_volume()" type="number" value="5" min="1" max="10" step="1" />
+    <button class="plus_minus" onclick="increment_volume(1)">+</button>
+    <button class="plus_minus" onclick="increment_volume(-1)">-</button>
+
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <div>Pitch</div>
+    <label><input type="radio" name="frequency" value="600" onclick="change_frequency(this)">600</input></label>
+    <label><input type="radio" name="frequency" value="800" onclick="change_frequency(this)">800</input></label>
+    <label><input type="radio" name="frequency" value="1000" onclick="change_frequency(this)"
+            checked>1000</input></label>
+    <label><input type="radio" name="frequency" value="1200" onclick="change_frequency(this)">1200</input></label>
+    <label><input type="radio" name="frequency" value="1600" onclick="change_frequency(this)">1600</input></label>
+
+    <br>
+    <br>
+
+    <br>
+
 </body>
 
 </html>
