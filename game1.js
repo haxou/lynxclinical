@@ -161,7 +161,7 @@ document.getElementById("clickN").addEventListener("click", () => {
     c.fillStyle = "black"
     c.textAlign = "center"
     c.font = "15px Roboto"
-    c.fillText(`You rate ${Math.round(1/(avgY)*100)}% on self-focus. Scores below 80% indicate ADHD.`, b.width / 2, b.height / 2 + 60)
+    c.fillText(`You rate ${Math.round(1/(avgY)*100)}% on self-focus. Scores below 50% indicate ADHD.`, b.width / 2, b.height / 2 + 60)
     // The big number is the distribution.
     let xhttp = new XMLHttpRequest()
     xhttp.setRequestHeader("Content-type", "application/json");
