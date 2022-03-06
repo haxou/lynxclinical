@@ -165,7 +165,7 @@ document.getElementById("clickN").addEventListener("click", () => {
     var efficiency = Math.round((swimmersAcross / 6)*100)
     var attentionScore = (selfFocus + efficiency)/2
     
-    c.fillText(`You rate ${selfFocus}% on focus, and ${efficiency}% on efficiency. Your overall score is ${attentionScore}%. Scores below 60% for efficiency indicate ADHD, and scores above 50% for self-focus indicate ADHD.`, b.width / 2, b.height / 2 + 60)
+    c.fillText(`You rate ${selfFocus}% on focus, and ${efficiency}% on efficiency. Your overall score is ${attentionScore}%. Scores below 60% for efficiency indicate ADHD, scores above 50% for self-focus indicate ADHD, and overall scores below 70 indicate ADHD`, b.width / 2, b.height / 2 + 60)
     // The big number is the distribution.
     let xhttp = new XMLHttpRequest()
     xhttp.setRequestHeader("Content-type", "application/json");
