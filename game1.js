@@ -161,7 +161,7 @@ document.getElementById("clickN").addEventListener("click", () => {
     c.fillStyle = "black"
     c.textAlign = "center"
     c.font = "15px Roboto"
-    c.fillText(`You rate ${Math.round(1/(avgY)*100)}% on self-focus, and ${Math.round((swimmersAcross / 6)*100)}% on efficiency. Scores below 50% for efficiency indicate ADHD, and scores above 50% for self-focus indicate ADHD.`, b.width / 2, b.height / 2 + 60)
+    c.fillText(`You rate ${Math.round(1/(avgY)*100)}% on self-focus, and ${Math.round((swimmersAcross / 6)*100)}% on efficiency. Scores below 60% for efficiency indicate ADHD, and scores above 50% for self-focus indicate ADHD.`, b.width / 2, b.height / 2 + 60)
     // The big number is the distribution.
     let xhttp = new XMLHttpRequest()
     xhttp.setRequestHeader("Content-type", "application/json");
