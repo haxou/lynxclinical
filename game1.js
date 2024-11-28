@@ -165,7 +165,7 @@ document.getElementById("clickN").addEventListener("click", () => {
     c.font = "15px Roboto"
     var selfFocus = 100 - (Math.round(1/(avgY)*100))
     var efficiency = Math.round((swimmersAcross / 6)*100)
-    var attentionScore = (selfFocus + efficiency)/2
+    var attentionScore = Math.round((selfFocus + efficiency)/2)
     //Come on Arnav, math! Self focus is bad and efficiency is good. Averaging the two is simply incorrect.
     //Rewrite them so that both are good or both are bad. 
     //Might as well change the whole variable so as not to confuse the poor patients..
