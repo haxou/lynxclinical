@@ -166,11 +166,22 @@ document.getElementById("clickN").addEventListener("click", () => {
     var selfFocus = 100 - (Math.round(1/(avgY)*100))
     var efficiency = Math.round((swimmersAcross / 6)*100)
     var attentionScore = (selfFocus + efficiency)/2
+    //Come on Arnav, math! Self focus is bad and efficiency is good. Averaging the two is simply incorrect.
+    //Rewrite them so that both are good or both are bad. 
+    //Might as well change the whole variable so as not to confuse the poor patients..
     let adhdstat = false;
     if (attentionScore > 70) {
         adhdstat = true;
     } 
-    c.fillText(`Your score is ${attentionScore}. ADHD indicated: ${adhdstat}`)
+    if (adhdstat) {
+        c.fillText(`Your performance indicates ADHD.`, b.width / 2, b.height / 2 + 60)
+        c.fillText(`Executive function score: ${efficiency}%`, b.width / 2, b.height / 2 + 120)
+        c.fillText(`Focus score: ${selfFocus}%`, b.width / 2, b.height / 2 + 180)   
+    } else {
+        c.fillText(`Your performance does not indicate ADHD. We recommend seeing a specialist if you have concerns.`, b.width / 2, b.height / 2 + 60)
+        c.fillText(`Executive function score: ${efficiency}%`, b.width / 2, b.height / 2 + 120)
+        c.fillText(`Focus score: ${selfFocus}%`, b.width / 2, b.height / 2 + 180)
+    }
     let xhttp = new XMLHttpRequest()
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.onreadystatechange = () => {
