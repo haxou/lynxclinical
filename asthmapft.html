@@ -9,7 +9,10 @@
 <body>
     <div class="container">
         <h1>Pulmonary Function Test Analysis</h1>
+
+        <!-- Bronchodilator Section -->
         <form id="pftForm">
+            <h2>With Bronchodilator</h2>
             <div class="form-group">
                 <label for="fev1Before">FEV1 Before Bronchodilator (L):</label>
                 <input type="number" id="fev1Before" step="0.01" required>
@@ -26,8 +29,23 @@
                 <label for="pefAfter">PEF After Bronchodilator (L/min):</label>
                 <input type="number" id="pefAfter" step="0.01" required>
             </div>
-            <button type="submit">Analyze</button>
+            <button type="submit">Analyze Bronchodilator Response</button>
         </form>
+        
+        <!-- Raw Values Section -->
+        <form id="rawForm">
+            <h2>Interpret Raw Pulmonary Function Values</h2>
+            <div class="form-group">
+                <label for="fev1Raw">FEV1 (L):</label>
+                <input type="number" id="fev1Raw" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="pefRaw">PEF (L/min):</label>
+                <input type="number" id="pefRaw" step="0.01" required>
+            </div>
+            <button type="submit">Analyze Raw Values</button>
+        </form>
+
         <div id="result" class="result"></div>
     </div>
     <script src="scriptas.js"></script>
