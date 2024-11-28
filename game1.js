@@ -174,10 +174,12 @@ document.getElementById("clickN").addEventListener("click", () => {
         c.fillText(`Your performance indicates ADHD.`, b.width / 2, b.height / 2 + 60)
         c.fillText(`Executive function score: ${efficiency}%`, b.width / 2, b.height / 2 + 120)
         c.fillText(`Focus score: ${selfFocus}%`, b.width / 2, b.height / 2 + 180)   
+        c.fillText(`Composite attention: ${attentionScore}%`, b.width / 2, b.height / 2 + 240)
     } else {
         c.fillText(`Your performance does not indicate ADHD. We recommend seeing a specialist if you have concerns.`, b.width / 2, b.height / 2 + 60)
         c.fillText(`Executive function score: ${efficiency}%`, b.width / 2, b.height / 2 + 120)
         c.fillText(`Focus score: ${selfFocus}%`, b.width / 2, b.height / 2 + 180)
+        c.fillText(`Composite attention: ${attentionScore}%`, b.width / 2, b.height / 2 + 240)
     }
     let xhttp = new XMLHttpRequest()
     xhttp.setRequestHeader("Content-type", "application/json");
