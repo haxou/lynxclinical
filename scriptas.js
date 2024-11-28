@@ -24,3 +24,26 @@ document.getElementById('pftForm').addEventListener('submit', function (event) {
         resultDiv.style.color = "red";
     }
 });
+
+document.getElementById('rawForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // Input values
+    const fev1Raw = parseFloat(document.getElementById('fev1Raw').value);
+    const pefRaw = parseFloat(document.getElementById('pefRaw').value);
+
+    // Diagnostic interpretation based on thresholds
+    let diagnosis = "";
+    if (fev1Raw < 0.8) {
+        diagnosis = "Obstructive lung disease is likely (e.g., asthma, COPD).";
+    } else if (pefRaw < 80) {
+        diagnosis = "Reduced PEF indicates possible obstruction or restriction. Consult a healthcare provider.";
+    } else {
+        diagnosis = "Normal lung function.";
+    }
+
+    // Display result
+    const resultDiv = document.getElementById('result');
+    resultDiv.textContent = diagnosis;
+    resultDiv.style.color = diagnosis.includes("Normal") ? "green" : "red";
+});
