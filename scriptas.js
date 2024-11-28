@@ -54,9 +54,43 @@ document.getElementById('pftForm').addEventListener('submit', function (event) {
     resultDiv.style.color = hasAsthma ? "green" : "red";
 });
 
+// Raw Values Analysis
+document.getElementById('rawForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent page reload
+
+    // Input values
+    const age = parseFloat(document.getElementById('ageRaw').value);
+    const height = parseFloat(document.getElementById('heightRaw').value);
+    const fev1 = parseFloat(document.getElementById('fev1Raw').value);
+    const pef = parseFloat(document.getElementById('pefRaw').value);
+
+    // Predicted values
+    const predictedFEV1 = predictFEV1(height, age);
+    const predictedPEF = predictPEF(height, age);
+
+    // Percent of predicted
+    const fev1Percent = (fev1 / predictedFEV1) * 100;
+    const pefPercent = (pef / predictedPEF) * 100;
+
+    // Interpretation
+    let result = `Predicted FEV1: ${predictedFEV1} L, Predicted PEF: ${predictedPEF} L/min\n`;
+    result += `FEV1 is ${fev1Percent.toFixed(1)}% of predicted. PEF is ${pefPercent.toFixed(1)}% of predicted.\n`;
+
+    if (fev1Percent < 80 || pefPercent < 80) {
+        result += "Results suggest possible lung function impairment. Consult a healthcare provider.";
+    } else {
+        result += "Results suggest normal lung function.";
+    }
+
+    // Display result
+    const resultDiv = document.getElementById('result');
+    resultDiv.textContent = result;
+    resultDiv.style.color = fev1Percent >= 80 && pefPercent >= 80 ? "green" : "red";
+});
+
 // FeNO Analysis
 document.getElementById('fenoForm').addEventListener('submit', function (event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent page reload
 
     // Input value
     const feno = parseFloat(document.getElementById('feno').value);
