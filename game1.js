@@ -169,11 +169,8 @@ document.getElementById("clickN").addEventListener("click", () => {
     //Come on Arnav, math! Self focus is bad and efficiency is good. Averaging the two is simply incorrect.
     //Rewrite them so that both are good or both are bad. 
     //Might as well change the whole variable so as not to confuse the poor patients..
-    let adhdstat = false;
+    
     if (attentionScore > 70) {
-        adhdstat = true;
-    } 
-    if (adhdstat) {
         c.fillText(`Your performance indicates ADHD.`, b.width / 2, b.height / 2 + 60)
         c.fillText(`Executive function score: ${efficiency}%`, b.width / 2, b.height / 2 + 120)
         c.fillText(`Focus score: ${selfFocus}%`, b.width / 2, b.height / 2 + 180)   
