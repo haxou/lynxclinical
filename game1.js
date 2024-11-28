@@ -6,6 +6,8 @@ let amount = 15,
         "Click a swimmer's lane to make them go faster.",
         "Remember to save your tokens!",
         "Your ability to distribute that influences how many of your swimmers make it to the end."]
+
+
 let count = 0,
     countI = 0,
     myReq
@@ -164,16 +166,16 @@ document.getElementById("clickN").addEventListener("click", () => {
     var selfFocus = 100 - (Math.round(1/(avgY)*100))
     var efficiency = Math.round((swimmersAcross / 6)*100)
     var attentionScore = (selfFocus + efficiency)/2
+    let adhdstat = false;
     if (attentionScore > 70) {
-        c.fillText(`Your performance indicates ADHD.`)
-        c.fillText(`Focus score: ${selfFocus}%`)
-        c.fillText(`Efficiency (exec function): ${effeciency}%`)
+        adhdstat = true;
+    } 
+    c.fillText(`Your score is ${attentionScore}. ADHD indicated: ${adhdstat}`)
+    if (adhdstat) {
+        c.fillText("We recommend seeing a specialist as your performance indicates ADHD.")
     } else {
-        c.fillText(`Your performance does not indicate ADHD.`)
-        c.fillText(`Focus score: ${selfFocus}%`)
-        c.fillText(`Efficiency (exec function): ${effeciency}%`)
+        c.fillText("Your performance does not indicate ADHD.")
     }
-    // The big number is the distribution.
     let xhttp = new XMLHttpRequest()
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.onreadystatechange = () => {
