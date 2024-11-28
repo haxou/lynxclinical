@@ -1,6 +1,5 @@
-// Prediction equations for FEV1 and PEF based on age and height
-function predictFEV1(height, age, gender = "male") {
-    // Using NHANES III equations (males and females differ slightly)
+// Prediction equations for FEV1 and PEF based on age, height, and gender
+function predictFEV1(height, age, gender) {
     if (gender === "male") {
         return (0.0576 * height - 0.026 * age - 4.34).toFixed(2); // Height in cm, age in years
     } else {
@@ -8,8 +7,7 @@ function predictFEV1(height, age, gender = "male") {
     }
 }
 
-function predictPEF(height, age, gender = "male") {
-    // Using NHANES III equations (males and females differ slightly)
+function predictPEF(height, age, gender) {
     if (gender === "male") {
         return (height * 5.48 - age * 3.38 - 1.58).toFixed(2); // Height in cm, age in years
     } else {
@@ -22,6 +20,7 @@ document.getElementById('pftForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
     // Input values
+    const gender = document.getElementById('gender').value;
     const age = parseFloat(document.getElementById('age').value);
     const height = parseFloat(document.getElementById('height').value);
     const fev1Before = parseFloat(document.getElementById('fev1Before').value);
@@ -30,8 +29,8 @@ document.getElementById('pftForm').addEventListener('submit', function (event) {
     const pefAfter = parseFloat(document.getElementById('pefAfter').value);
 
     // Predicted values
-    const predictedFEV1 = predictFEV1(height, age);
-    const predictedPEF = predictPEF(height, age);
+    const predictedFEV1 = predictFEV1(height, age, gender);
+    const predictedPEF = predictPEF(height, age, gender);
 
     // Percentage improvements
     const fev1Improvement = ((fev1After - fev1Before) / fev1Before) * 100;
@@ -59,14 +58,15 @@ document.getElementById('rawForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent page reload
 
     // Input values
+    const gender = document.getElementById('genderRaw').value;
     const age = parseFloat(document.getElementById('ageRaw').value);
     const height = parseFloat(document.getElementById('heightRaw').value);
     const fev1 = parseFloat(document.getElementById('fev1Raw').value);
     const pef = parseFloat(document.getElementById('pefRaw').value);
 
     // Predicted values
-    const predictedFEV1 = predictFEV1(height, age);
-    const predictedPEF = predictPEF(height, age);
+    const predictedFEV1 = predictFEV1(height, age, gender);
+    const predictedPEF = predictPEF(height, age, gender);
 
     // Percent of predicted
     const fev1Percent = (fev1 / predictedFEV1) * 100;
