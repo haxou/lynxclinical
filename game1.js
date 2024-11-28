@@ -171,11 +171,6 @@ document.getElementById("clickN").addEventListener("click", () => {
         adhdstat = true;
     } 
     c.fillText(`Your score is ${attentionScore}. ADHD indicated: ${adhdstat}`)
-    if (adhdstat) {
-        c.fillText("We recommend seeing a specialist as your performance indicates ADHD.")
-    } else {
-        c.fillText("Your performance does not indicate ADHD.")
-    }
     let xhttp = new XMLHttpRequest()
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.onreadystatechange = () => {
