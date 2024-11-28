@@ -165,13 +165,13 @@ document.getElementById("clickN").addEventListener("click", () => {
     var efficiency = Math.round((swimmersAcross / 6)*100)
     var attentionScore = (selfFocus + efficiency)/2
     if (attentionScore > 70) {
-        c.fillText(`Your performance indicates ADHD. \n`)
-        c.fillText(`Focus score: ${selfFocus}% \n`)
-        c.fillText(`Efficiency (exec function): ${effeciency} \n`)
+        c.fillText(`Your performance indicates ADHD.`)
+        c.fillText(`Focus score: ${selfFocus}%`)
+        c.fillText(`Efficiency (exec function): ${effeciency}%`)
     } else {
-        c.fillText(`Your performance does not indicate ADHD. \n`)
-        c.fillText(`Focus score: ${selfFocus}% \n`)
-        c.fillText(`Efficiency (exec function): ${effeciency} \n`)
+        c.fillText(`Your performance does not indicate ADHD.`)
+        c.fillText(`Focus score: ${selfFocus}%`)
+        c.fillText(`Efficiency (exec function): ${effeciency}%`)
     }
     // The big number is the distribution.
     let xhttp = new XMLHttpRequest()
