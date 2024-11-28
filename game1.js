@@ -67,7 +67,7 @@ class Person {
     }
 }
 let swimmers = [],
-    timeCount = 12,
+    timeCount = 11,
     start = Date.now()
 const interv = () => {
     var delta = Date.now() - start // milliseconds elapsed since start
