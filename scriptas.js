@@ -39,7 +39,7 @@ document.getElementById('pftForm').addEventListener('submit', function (event) {
     // Interpretation
     const fev1Percent = (fev1Before / predictedFEV1) * 100;
     const pefPercent = (pefBefore / predictedPEF) * 100;
-    const hasAsthma = fev1Improvement >= 12 && pefImprovement >= 15;
+    const hasAsthma = fev1Improvement >= 12 || pefImprovement >= 15;
 
     let result = `Predicted FEV1: ${predictedFEV1} L, Predicted PEF: ${predictedPEF} L/min\n`;
     result += `FEV1 is ${fev1Percent.toFixed(1)}% of predicted. PEF is ${pefPercent.toFixed(1)}% of predicted.\n`;
