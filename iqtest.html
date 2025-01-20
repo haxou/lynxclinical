@@ -175,6 +175,7 @@
                 if (timeLeft < 0) {
                     clearInterval(interval);
                     submitTest();
+                    alert("Test Complete! Please view your report below the submit button.");
                 }
             }, 1000);
         }
@@ -216,6 +217,7 @@
 
         function submitTest() {
             const form = document.getElementById("testForm");
+            alert("Test Complete! Please view your report below the submit button.");
             const formData = new FormData(form);
             let score = 0;
 
