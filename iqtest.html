@@ -1,4 +1,248 @@
 <!DOCTYPE html>
-<html>
-  <div style="height: 0; padding-bottom: calc(74.89%); position:relative; width: 100%;"><iframe allow="autoplay; gyroscope;" allowfullscreen height="100%" referrerpolicy="strict-origin" src="https://ravens-2-progressive-matrices-clinical-edition.netlify.app" style="border:0; height:100%; left:0; overflow:hidden; position:absolute; top:0; width:100%" title="" width="100%"></iframe></div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LynxClinical | Cognitive</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .timer {
+            font-size: 1.5em;
+            color: red;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .report {
+            margin-top: 20px;
+            font-size: 1.2em;
+            border-top: 1px solid #000;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>LynxClinical Cognitive Module</h1>
+    <div id="timer" class="timer">Time Left: 12:00</div>
+    <form id="testForm">
+        <!-- Questions will be dynamically injected here -->
+    </form>
+    <button type="button" onclick="submitTest()">Submit</button>
+    <div id="report" class="report" style="display: none;"></div>
+
+    <script>
+        const questions = [
+            "Which option’s meaning is most closely related to the meaning of this word: Describe?",
+            "Which option’s meaning is most closely related to the meaning of this word: Director?",
+            "Unscrambled, what is the second to last word of this sentence: me drove nuts she?",
+            "Which option could replace the slanted word without changing the meaning of the sentence: I want to be <em>happy</em>.",
+            "How many of the pairs below are exactly the same? 606 606, 1516 1516, 23311 21331, 249597 249597, 8515058 8519098",
+            "Which option best completes this pattern? A | B | C | A | B | C | A | B | ?",
+            "Which option best completes this pattern? A | B | A | B | A | B | A | B | ?",
+            "Which option best completes this sequence? 900 | 870 | 840 | ? | 780 | 750 | 720",
+            "Assuming they are true, which conclusion can you draw with absolute certainty from these statements? All Europeans are English | All girls are European",
+            "What is the result of this equation? 740 + 66 + 4",
+            "Which option’s meaning is most closely related to the meaning of this word: Despair?",
+            "Which option’s meaning is most closely related to the meaning of this word: Complicit?",
+            "Unscrambled, what is the second to last word of this sentence: for he keeps was playing?",
+            "Which option could replace the italicized word without changing the meaning of the sentence: Be very <em>meticulous</em> with the path you opt to take.",
+            "How many of the pairs below are exactly the same? 8995 8995, 74633 74693, 897898 827898, 9046474 9086474, 20860259 20860459",
+            "Which option best completes this sequence? AB | BB | CB | AC | BC | CC | AD | BD | ?",
+            "Which option best completes this sequence? ABC | AAC | ABC | BAC | BBC | BAC | CBC | CAC | ?",
+            "Which option best completes this sequence? 3 | 10 | 6 | 10 | 9 | ?",
+            "Assuming they are true, which conclusion can you draw with absolute certainty from these statements? Some A are not B | All A are C",
+            "What is the result of this equation? 825 + 12 + 4",
+            "Which option’s meaning is most closely related to the meaning of this word: Peppery?",
+            "Which option’s meaning is most closely related to the meaning of this word: Strafe?",
+            "Unscrambled, what is the second to last word of this sentence: at mouth the foaming were they?",
+            "Which option could replace the italicized word without changing the meaning of the sentence. You will be able to focus consistently, as long you maintain <em>serenity.</em>",
+            "How many of the pairs below are exactly the same? 95120 95126, 608983 608983, 5380166 5380366, 82818282 82818282, 837756503 837716503",
+            "Which option best completes this sequence? ABC | BCB | CBC | CCB | ABC | BCB | BBC | CCB | ?",
+            "Which option best completes this sequence? ABCD | DBCD | CBCD | BCBD | ACBD | DCBD | CDCD | BDCD | ?",
+            "Which option best completes this sequence? 3 | ? | 7 | ? | 11 | 13",
+            "Assuming they are true, which conclusion can you draw with absolute certainty from these statements? None of the dancers are basketball players | All Americans are dancers",
+            "What is the result of this equation? 2298 + 712 + 40",
+            "Which option’s meaning is most closely related to the meaning of this word: Saliency?",
+            "Which option’s meaning is most closely related to the meaning of this word: Ejector?",
+            "Unscrambled, what is the second to last word of this sentence: is in coach I said no there team?",
+            "Which option could replace the italicized words without changing the meaning of the sentence: Don’t take her <em>munificence</em> for <em>impotency</em>.",
+            "How many of the pairs below are exactly the same? 829089 829089, 8392550 8392450, 61856222 67856222, 599496287 599498287, 5311847827 5311847827",
+            "Which option best completes this sequence? ABCD | DBCD | CBCD | BCBD | ACBD | DCBD | CDCD | BDCD | ?",
+            "Which option best completes this sequence? ABCD | DBCD | ABCD | DCDA | ACDA | DCDA | ADAB | DDAB | ?",
+            "Which option best completes this sequence? 3 | 8 | 15 | 24 | 35 | ?",
+            "Assuming they are true, which conclusion can you draw with absolute certainty from these statements? All girls are Russian | At least a part of the Alaskans are girls",
+            "What is the result of this equation? 88713 + 8837 + 180",
+            "Which option’s meaning is most closely related to the meaning of this word: Shakti?",
+            "Which option’s meaning is most closely related to the meaning of this word: Exudative?",
+            "Unscrambled, what is the second to last word of this sentence: forget must what up down don’t come goes?",
+            "Which option could replace the underlined words without changing the meaning of the sentence? I am <em>impervious</em> to your <em>revilements</em>. ",
+            "How many of the pairs below are exactly the same? 4371879 4371379, 10528594 10228594, 854883549 854883549, 6416267058 6416264058, 34439739310 34439739310, 141867419262  141867419262, 3847358362828  3847357562828",
+            "Which option best completes this sequence? ABCDE | CBEDB | EBBDD | EBBDD | BBDDA | DBADC | DBADC | ABCDE | ?",
+            "Which option best completes this sequence? ABCDEF | BCCDEC | CBCDEF | ACCEEE | BBCEEB | CCCEEE | ABCFED | BCCFEA | ?",
+            "Which option best completes this sequence? 0 | 3/4 | 8/9 | 15/16 | 24/25 | ?",
+            "Assuming they are true, which conclusion can you draw with absolute certainty from these statements? None of the students are dumb | All students are Portuguese",
+            "What is the result of this equation? 995641 + 65070 + 5820"
+        ];
+
+        const correctAnswers = [
+            "Tell of", "Boss", "me", "jolly", "3", "C", "A", "810", "All girls are English", "810",
+            "Gloom", "Collusion", "for", "careful", "1", "CD", "CBC", "10", "Some C are not B", "841", "Fiery",
+            "Attack", "the", "calmness", "2", "ABC", "ADCD", "5, 9", "None of the other options is a correct solution",
+            "3050", "Importance", "Expel", "in", "kindness, weakness", "2", "ADCD", "ADAB", "48",
+            "None of the other options is a correct conclusion", "97730", "Life", "Ooz", "come", "immune, verbal abuse",
+            "3", "ABDCE", "CBCFED", "35/36", "Some of the Portuguese are not dumb", "1066531"
+        ];
+
+        const optionsList = [
+            ["Descry", "Hide", "Tell of", "Scribble", "Plug"],
+            ["Erector", "Divestor", "Follower", "Disk", "Boss"],
+            ["drove", "she", "nuts", "me"],
+            ["jolly", "bottle", "moon", "sad"],
+            ["1", "5", "2", "3", "4"],
+            ["B", "C", "A"],
+            ["B", "A", "C"],
+            ["820", "810", "790", "880"],
+            ["Some of the European Girls are English", "All girls are English", "None of the girls are English"],
+            ["814", "790", "734", "810"],
+            ["Parable", "Disparate", "Optimistic", "Gloom", "Disco"],
+            ["Colliding", "Collusion", "Script", "Sever", "Sabotage"],
+            ["was", "keeps", "playing", "for"],
+            ["open", "cavalier", "forthright", "careful"],
+            ["1", "5", "3", "4", "2"],
+            ["AC", "DC", "BD", "CD", "AD"],
+            ["ABC", "BAC", "ABA", "BAB", "CBC"],
+            ["10", "9", "12", "6"],
+            ["Some C are not B", "Some C are B", "None of A are B"],
+            ["842", "839", "822", "841"],
+            ["Mild", "Specimen", "Fabricant", "Methodical", "Fiery"],
+            ["Praise", "Straddle", "Substrate", "Pity", "Attack"],
+            ["foaming", "were", "mouth", "the"],
+            ["interest", "ravishness", "calmness", "intensity"],
+            ["1", "5", "4", "2", "3"],
+            ["CBC", "ABA", "ABC", "CAB", "BCA"],
+            ["CBCD", "ADBD", "CDBD", "ADCD", "DCCD"],
+            ["2, 9", "5, 9", "4, 10", "3, 7"],
+            ["None of the other options is a correct solution", "Some Americans are basketball players", "Some Americans are not dancers"],
+            ["3050", "3090", "3000", "2882", "2986"],
+            ["Union", "Insidious", "Hidden", "Importance", "Salutary"],
+            ["Debut", "Bejumble", "Withdrawal", "Expel", "Abbreact"],
+            ["in", "team", "there", "said"],
+            ["generosity, kindness", "confidence, arrogance", "kindness, weakness", "conformity, stupidity"],
+            ["2", "6", "5", "1", "3"],
+            ["ADCD", "DBBC", "CDCD", "ABBD", "DCCC"],
+            ["DCCD", "DABA", "DDAB", "ADAB", "ADCD"],
+            ["42", "48", "46", "36"],
+            ["None of the other options is a correct conclusion", "All Alaskans are girls", "All girls are Alaskans"],
+            ["100731", "99240", "98560", "97320", "97730"],
+            ["Duel", "Passing", "Life", "Therapist", "Shake"],
+            ["Deference", "Dry", "Nuance", "Ooz", "Operative"],
+            ["what", "down", "goes", "come"],
+            ["sensitive, compliments", "resistant, shaming", "beholden, revelations", "immune, verbal abuse"],
+            ["1", "4", "6", "5", "2"],
+            ["EDBCD", "DBEDC", "CBEDB", "CBADB", "ABDCE"],
+            ["CCBEEF", "ABCDFE", "BCDEDD", "CBCEFD", "CBCFED"],
+            ["29/28", "33/32", "37/38", "35/36"],
+            ["All Portuguese are dumb", "Some of the Portuguese are not dumb", "None of the Portuguese are dumb"],
+            ["1065991", "1174265", "1281999", "1066531", "1145721"]
+        ];
+
+        const scoreRanges = [
+            { min: 0, max: 80, label: "Intellectual Disability" },
+            { min: 81, max: 90, label: "Below Average" },
+            { min: 91, max: 110, label: "Average" },
+            { min: 111, max: 119, label: "Above Average" },
+            { min: 120, max: Infinity, label: "Gifted" }
+        ];
+
+        let timeLeft = 12 * 60; // 12 minutes in seconds
+
+        function startTimer() {
+            const timerElement = document.getElementById("timer");
+            const interval = setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerElement.textContent = `Time Left: ${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+                timeLeft--;
+
+                if (timeLeft < 0) {
+                    clearInterval(interval);
+                    submitTest();
+                }
+            }, 1000);
+        }
+
+        function loadQuestions() {
+            const form = document.getElementById("testForm");
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.className = "question";
+
+                const questionText = document.createElement("p");
+                questionText.innerHTML = `Q${index + 1}: ${question}`;
+                questionDiv.appendChild(questionText);
+
+                const options = optionsList[index];
+                options.forEach((option) => {
+                    const label = document.createElement("label");
+                    const input = document.createElement("input");
+                    input.type = "radio";
+                    input.name = `q${index + 1}`;
+                    input.value = option;
+                    label.appendChild(input);
+                    label.appendChild(document.createTextNode(option));
+                    questionDiv.appendChild(label);
+                });
+
+                form.appendChild(questionDiv);
+            });
+        }
+
+        function getScoreCategory(score) {
+            for (const range of scoreRanges) {
+                if (score >= range.min && score <= range.max) {
+                    return range.label;
+                }
+            }
+            return "Unknown";
+        }
+
+        function submitTest() {
+            const form = document.getElementById("testForm");
+            const formData = new FormData(form);
+            let score = 0;
+
+            questions.forEach((_, index) => {
+                const selectedAnswer = formData.get(`q${index + 1}`);
+                if (selectedAnswer === correctAnswers[index]) {
+                    score++;
+                }
+            });
+
+            const standardScore = Math.round((((score - 21.5) / 7.438) * 15) + 100);
+            const scoreCategory = getScoreCategory(standardScore);
+
+            const reportElement = document.getElementById("report");
+            reportElement.style.display = "block";
+            reportElement.innerHTML = `
+                <h2>LC-COG Report</h2>
+                <p><strong>Raw Score:</strong> ${score}/${questions.length}</p>
+                <p><strong>Standard Score (IQ):</strong> ${standardScore}</p>
+                <p><strong>Category:</strong> ${scoreCategory}</p>
+            `;
+        }
+
+        window.onload = () => {
+            loadQuestions();
+            startTimer();
+        };
+    </script>
+</body>
 </html>
