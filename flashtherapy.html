@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LynxClinical | Frequency Therapy</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            transition: background-color 0.1s;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .warning {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="warning">
+        WARNING: This application involves rapidly flashing screens that may trigger seizures in individuals with photosensitive epilepsy. Use at your own risk. By proceeding, you agree that the creator is not liable for any adverse effects.
+    </div>
+
+    <button onclick="startFlashing(1380)">Beta Waves (1380 flashes/min)</button>
+    <button onclick="startFlashing(360)">Theta Waves (360 flashes/min)</button>
+    <button onclick="startFlashing(660)">Alpha Waves (660 flashes/min)</button>
+    <button onclick="startFlashing(120)">Delta Waves (120 flashes/min)</button>
+    <button onclick="startFlashing(2400)">Gamma Waves (2400 flashes/min)</button>
+    <button onclick="stopFlashing()">Stop Flashing</button>
+
+    <script>
+        let flashInterval;
+
+        function startFlashing(flashesPerMinute) {
+            clearInterval(flashInterval); // Clear any existing interval
+
+            const interval = 60000 / flashesPerMinute; // Calculate interval in milliseconds
+            let isWhite = true;
+
+            flashInterval = setInterval(() => {
+                document.body.style.backgroundColor = isWhite ? 'black' : 'white';
+                isWhite = !isWhite;
+            }, interval);
+        }
+
+        function stopFlashing() {
+            clearInterval(flashInterval);
+            document.body.style.backgroundColor = 'white';
+        }
+    </script>
+
+</body>
+</html>
